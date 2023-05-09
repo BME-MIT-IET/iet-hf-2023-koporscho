@@ -1,10 +1,8 @@
 package graphic;
 
 import koporscho.*;
-import proto.Test;
 
 import java.io.*;
-import java.lang.Character;
 import java.util.*;
 
 /** A mentést és betöltést megvalósító osztály.*/
