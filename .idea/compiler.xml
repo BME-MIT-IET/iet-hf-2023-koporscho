@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Koporscho" target="17" />
       <module name="koporscho" target="17" />
     </bytecodeTargetLevel>
   </component>
