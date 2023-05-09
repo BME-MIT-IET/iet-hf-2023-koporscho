@@ -1,5 +1,4 @@
 package koporscho;
-import proto.Prototype;
 import java.util.*;
 //
 //
