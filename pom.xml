@@ -13,15 +13,27 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-	<build>
-		<plugin>
-			<groupId>org.eluder.coveralls</groupId>
-			<artifactId>coveralls-maven-plugin</artifactId>
-			<version>4.3.0</version>
-			<configuration>
-				<repoToken>dkqKg6L1vjENMaJIiXj9wowiSKirfNgr1</repoToken>
-			</configuration>
-		</plugin>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <configuration>
+                    <repoToken>dkqKg6L1vjENMaJIiXj9wowiSKirfNgr1</repoToken>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 
 </project>
