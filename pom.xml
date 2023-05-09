@@ -13,5 +13,15 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+	<build>
+		<plugin>
+			<groupId>org.eluder.coveralls</groupId>
+			<artifactId>coveralls-maven-plugin</artifactId>
+			<version>4.3.0</version>
+			<configuration>
+				<repoToken>dkqKg6L1vjENMaJIiXj9wowiSKirfNgr1</repoToken>
+			</configuration>
+		</plugin>
+	</build>
 
 </project>
