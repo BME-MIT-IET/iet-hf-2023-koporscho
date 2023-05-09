@@ -3,6 +3,7 @@ package tests.unit;
 import jdk.jshell.spi.ExecutionControl;
 import koporscho.*;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,10 +19,13 @@ class VirologistTest {
         virologist = new Virologist("TestVirologist");
         startingField = new City();
         virologist.Move(startingField);
+
+        virologist.SetMaterials(new Materials(0, 0));
+        virologist.SetMaxMaterials(new Materials(15,15));
     }
 
     @Test
-    void Move(){
+    void Should_move_to_neighboring_field_and_reduce_ap(){
         Field fieldToMoveTo = new Shelter();
         ArrayList<Field> neighbors = new ArrayList<>();
         neighbors.add(startingField);
@@ -35,13 +39,47 @@ class VirologistTest {
     }
 
     @Test
-    void CraftAgent(){
-        
+    void Should_craft_agent_and_decrease_materials_if_has_enough_materials_and_knows_recipe(){
+        Agent agentToCraft = new Agent(new StatusEffect(), new Materials(10,10));
+        virologist.LearnRecipe(agentToCraft);
+        virologist.AddMaterials(new Materials(15,15));
+
+        virologist.CraftAgent(agentToCraft);
+        assertThat(virologist.GetCurrentMaterials().GetNucleotide()).isEqualTo(5);
+        assertThat(virologist.GetCurrentMaterials().GetAminoAcid()).isEqualTo(5);
+        assertThat(agentToCraft).isIn(virologist.GetAgentInventory());
     }
 
     @Test
-    void ApplyAgent(){
-        throw new RuntimeException("Not implemented");
+    void Should_not_craft_agent_if_does_not_have_enough_materials(){
+        Agent agentToCraft = new Agent(new StatusEffect(), new Materials(10,10));
+        virologist.LearnRecipe(agentToCraft);
+        virologist.AddMaterials(new Materials(11,6));
+
+        virologist.CraftAgent(agentToCraft);
+
+        assertThat(agentToCraft).isNotIn(virologist.GetAgentInventory());
+    }
+
+    @Test
+    void Should_not_craft_agent_if_does_not_know_recipe(){
+        Agent agentToCraft = new Agent(new StatusEffect(), new Materials(10,10));
+        virologist.AddMaterials(new Materials(15,15));
+
+        virologist.CraftAgent(agentToCraft);
+        assertThat(agentToCraft).isNotIn(virologist.GetAgentInventory());
+    }
+    @Test
+    void Should_apply_agent_to_target_and_remove_it_from_inventory(){
+        StatusEffect statusEffect = new StatusEffect();
+        statusEffect.SetParalyzed(true);
+        Agent agentToApply = new Agent(statusEffect,new Materials());
+        virologist.AddAgent(agentToApply);
+        Virologist target = new Virologist("Target");
+
+        virologist.ApplyAgent(target, agentToApply);
+
+        assertThat(agentToApply).isNotIn(virologist.GetAgentInventory());
     }
 
     @Test
@@ -66,6 +104,5 @@ class VirologistTest {
 
     @AfterEach
     void tearDown() {
-        throw new RuntimeException("Not implemented");
     }
 }
