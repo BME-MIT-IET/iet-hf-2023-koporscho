@@ -8,6 +8,9 @@
 
 name: Java CI with Maven
 
+env:
+  COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
 on:
   push:
     branches: [ "main" ]
@@ -27,8 +30,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Build and Test with Maven
+        run: mvn -B package --file pom.xml -D coveralls.secret=${{ env.COVERALLS_REPO_TOKEN }}
+
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1
+        with:
+          repo-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          path-to-lcov: target/site/cobertura/coverage.xml
+
 

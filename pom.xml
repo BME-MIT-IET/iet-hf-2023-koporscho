@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.koporscho</groupId>
-    <artifactId>Koporscho</artifactId>
+    <artifactId>koporscho</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -30,8 +30,22 @@
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>4.3.0</version>
                 <configuration>
-                    <repoToken>dkqKg6L1vjENMaJIiXj9wowiSKirfNgr1</repoToken>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>cobertura</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 	</build>
