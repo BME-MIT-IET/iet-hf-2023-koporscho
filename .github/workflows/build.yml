@@ -31,12 +31,10 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build and Test with Maven
-        run: mvn clean verify cobertura:cobertura -B package --file pom.xml -D coveralls.secret=${{ env.COVERALLS_REPO_TOKEN }}
+        run: mvn clean test jacoco:report coveralls:report -B package --file pom.xml -D coveralls.secret=${{ env.COVERALLS_REPO_TOKEN }}
 
       - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1
+        uses: coverallsapp/github-action@v2
         with:
-          repo-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-          path-to-lcov: target/site/cobertura/coverage.xml
-
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
