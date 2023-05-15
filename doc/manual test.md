@@ -12,6 +12,8 @@
    - [Al-lépés 1]
    - [Al-lépés 2]
 
+**Elvárt eredmény:** [Elvárt eredmény a tesztesettől]
+
 **Siker/hiba:** [Siker/hiba]
 
 **Megjegyzések:** [További megjegyzések, észrevételek vagy problémák]
@@ -27,6 +29,8 @@
 3. [3. lépés]
    - [Al-lépés 1]
    - [Al-lépés 2]
+
+**Elvárt eredmény:** [Elvárt eredmény a tesztesettől]
 
 **Siker/hiba:** [Siker/hiba]
 
