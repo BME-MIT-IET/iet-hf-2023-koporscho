@@ -87,6 +87,22 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
+## Teszteset 5: Virológus interakciója várossal
+
+**Leírás:** Város mezőn állva interakció végrehajtása.
+
+**Lépések:**
+
+1. Interakció (2) választása (a játék egy város mezőn kezdődik, ezért nem kell most rá lépni)
+
+**Elvárt eredmény:** Ne történjen semmi, hiszen a városnak nincs kitüntetett szerepe interakció esetén.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** Megfontolandó lehet, hogy ilyenkor ne csökkenjen az akciók száma, hanem egy felugró ablak jelezze, hogy ennek a lépésnek nincs haszna.
+
+---
+
 ## Teszteset X: [Teszteset neve]
 
 **Leírás:** [Rövid leírás a tesztesetről]
