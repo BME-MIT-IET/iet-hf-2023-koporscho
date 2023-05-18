@@ -66,11 +66,11 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ## Teszteset 4: Háttér változása a mezőnek megfelelően
 
-**Leírás:** Négyféle mező van, város, labor, raktár és menedékhely. A háttér mindig azt reprezentálja, amin a játékos áll.
+**Leírás:** Négyféle mező van, város, labor, raktár és óvóhely. A háttér mindig azt reprezentálja, amin a játékos áll.
 
 **Lépések:**
 
-1. Első virológus menedékhelyre lép
+1. Első virológus óvóhelyre lép
    - Move (1), Shelter-1 (1)
 2. Első virológus városra lép
    - Move (1), City-1 (5)
@@ -100,6 +100,42 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 **Siker/hiba:** Siker
 
 **Megjegyzések:** Megfontolandó lehet, hogy ilyenkor ne csökkenjen az akciók száma, hanem egy felugró ablak jelezze, hogy ennek a lépésnek nincs haszna.
+
+---
+
+## Teszteset 6: Virológus interakciója laborral
+
+**Leírás:** Labor mezőn állva interakció végrehajtása, ezáltal a megismerhető genetikai kód megtanulása.
+
+**Lépések:**
+
+1. Lépés (1) a Lab-2 mezőre (3)
+2. Interakció (2)
+3. Váltás a kis képernyőn a receptekre (E)
+
+**Elvárt eredmény:** A genetikai kód bekerül a receptek közé.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 7: Virológus interakciója óvóhellyel
+
+**Leírás:** Óvóhelyen állva interakció végrehajtása, ezáltal a felvehető felszerelés megszerzése.
+
+**Lépések:**
+
+1. Lépés (1) a Shelter-1 mezőre (1)
+2. Interakció (2)
+3. Interakció (2)
+
+**Elvárt eredmény:** A felszerelés rákerül a játékosra, mégegyszer nem vehető fel.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** A harmadik felszerelésnek a helye lelóg a képernyőről.
 
 ---
 
