@@ -139,6 +139,23 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
+## Teszteset 8: Virológus interakciója raktárral
+
+**Leírás:** Raktár mezőn állva interakció végrehajtása, ezáltal a felvehető anyagok megszerzése
+
+**Lépések:**
+
+1. Lépés (1) a Storage-1 mezőre (2)
+2. Interakció (2)
+
+**Elvárt eredmény:** A képernyő bal alján megjelenik a felvett anyagok száma. Különböző raktárakban más-más mennyiség szerezhető meg.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
 ## Teszteset X: [Teszteset neve]
 
 **Leírás:** [Rövid leírás a tesztesetről]
