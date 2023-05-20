@@ -60,7 +60,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 **Siker/hiba:** Siker
 
-**Megjegyzések:** Az 1-es (move) és 0-ás (cancel) gomb akárhányszor megnyomható egymás után, így egy játékos tudja húzni az időt. Egy limit jó lenne erre.
+**Megjegyzések:** A térkép lelóg a képernyőről. Továbbá az 1-es (move) és 0-ás (cancel) gomb akárhányszor megnyomható egymás után, így egy játékos tudja húzni az időt. Egy limit jó lenne erre.
 
 ---
 
@@ -149,6 +149,53 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 2. Interakció (2)
 
 **Elvárt eredmény:** A képernyő bal alján megjelenik a felvett anyagok száma. Különböző raktárakban más-más mennyiség szerezhető meg.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 9: Ágens készítése I.
+
+**Leírás:** Az anyagok és egy genetikai kód megszerzése után ágens készítése belőlük.
+
+**Lépések:**
+
+1. Első virológus lépései
+   - Move (1) Storage-1 (2)
+   - Interakció (2)
+   - Move (1) Lab-2 (4)
+2. Második és harmadik virológus lépései
+   - akár ugyanezek, mint fent vagy mások
+3. Újra az első virológus
+   - Interakció (2)
+   - Craft agent (4) Chorea (1)
+
+**Elvárt eredmény:** Nem sikerül az ágens elkészítése a megfelelő anyagok hiánya miatt.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** Semmilyen hibaüzenet nem jelzi sem a sikertelen műveletet, sem annak az okát.
+
+---
+
+## Teszteset 10: Ágens készítése II.
+
+**Leírás:** Az előző esetet folytatva, további anyagok gyűjtése és újrapróbálkozás.
+
+**Lépések:**
+
+1. Első virológussal
+   - Move (1) City-1 (2)
+   - Move (1) Storage-3 (6)
+   - Interakció (2)
+2. Második és harmadik virológus lépései
+3. Első virológussal ágens készítés.
+   - Craft agent (4) Chorea (1)
+   - váltás a saját tárgyak közt (E)
+
+**Elvárt eredmény:** Az anyagok levonódnak a játékostól, az elkészült ágens pedig megjelenik nála.
 
 **Siker/hiba:** Siker
 
