@@ -113,7 +113,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 2. Interakció (2)
 3. Váltás a kis képernyőn a receptekre (E)
 
-**Elvárt eredmény:** A genetikai kód bekerül a receptek közé.
+**Elvárt eredmény:** A genetikai kód bekerül a receptek közé. Többször nem tanulható meg.
 
 **Siker/hiba:** Siker
 
