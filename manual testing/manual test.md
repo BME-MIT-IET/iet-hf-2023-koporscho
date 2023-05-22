@@ -203,6 +203,41 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
+## Teszteset 11: Felszerelés eldobása
+
+**Leírás:** A virológus a nála lévő felszerelések közül a választottat eldobja.
+
+**Lépések:**
+
+1. Move (1) Shelter-1 (1)
+2. Interact (2)
+3. Drop equipment (5)
+
+**Elvárt eredmény:** A választott felszerelés lekerül a virológusról, hatása elmúlik.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 12: Megfertőződés medvevírussal
+
+**Leírás:** A virológus olyan laborra lép, ahol megfertőződik a medvevírussal.
+
+**Lépések:**
+
+1. Move (1) Shelter-1 (1)
+2. Move (1) Lab-1 (1)
+
+**Elvárt eredmény:** A medvevírus hatása alá kerül. A képénél megjelenik egy medve ikon, és a neve is átvált Bear-re.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
 ## Teszteset X: [Teszteset neve]
 
 **Leírás:** [Rövid leírás a tesztesetről]
