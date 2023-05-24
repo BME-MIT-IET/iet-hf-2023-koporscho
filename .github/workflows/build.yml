@@ -47,5 +47,5 @@ jobs:
         run: mvn verify sonar:sonar
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=bme-mit-iet-org
-          -Dsonar.projectKey=iet-hf-2023-koporscho
+          -Dsonar.projectKey=BME-MIT-IET-iet-hf-2023-koporscho
           -Dsonar.sources=. -Dsonar.scm.disabled=true
