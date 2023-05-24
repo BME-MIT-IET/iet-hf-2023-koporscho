@@ -1,4 +1,4 @@
-package koporscho.runner;
+package tests.runner;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
