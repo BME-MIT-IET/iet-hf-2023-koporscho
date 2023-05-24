@@ -238,6 +238,23 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
+## Teszteset 13: Medvevírus hatása
+
+**Leírás:** A virológus medvevírussal fertőzött. Ennek hatására kontrollálatlanul mozog, a játékos nem tudja irányítani.
+
+**Lépések:**
+
+1. Move (1) Shelter-1 (1)
+2. Move (1) Lab-1 (1)
+
+**Elvárt eredmény:** A laborra lépés és megfertőződés után a harmadik lépés már random történik, nem a játékos irányítja.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
 ## Teszteset X: [Teszteset neve]
 
 **Leírás:** [Rövid leírás a tesztesetről]
