@@ -15,7 +15,7 @@ import java.util.Scanner;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : GameController.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
