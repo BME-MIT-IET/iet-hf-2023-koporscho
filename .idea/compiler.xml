@@ -9,8 +9,5 @@
         <module name="koporscho" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="koporscho" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

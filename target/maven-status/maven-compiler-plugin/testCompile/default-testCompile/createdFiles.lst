@@ -1,0 +1,4 @@
+test\java\tests\runner\RunCucumberTest.class
+test\java\tests\stepdefs\StepDefinitions.class
+test\java\tests\stepdefs\AgentCraftingStepDefinitions.class
+test\java\tests\stepdefs\IsItFriday.class

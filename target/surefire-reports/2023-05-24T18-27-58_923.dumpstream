@@ -1,0 +1,5 @@
+# Created at 2023-05-24T18:27:59.034
+Boot Manifest-JAR contains absolute paths in classpath 'D:\GitHub Repos\iet\iet-hf-2023-koporscho\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
