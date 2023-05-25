@@ -203,7 +203,83 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
-## Teszteset 11: Felszerelés eldobása
+## Teszteset 11: Ágens alkalmazása másra
+
+**Leírás:** Az elkészített ágens rákenése egy másik virológusra
+
+**Lépések:**
+
+1. Első virológus lépései
+   - Move (1) Storage-3 (6)
+   - Interact (2)
+   - Move (1) Lab-3 (1)
+2. Második virológus
+   - Move (1) Lab-3 (7)
+3. Maradék lépések (Interact 2. és 3. virológusnál)
+4. Újra az első virológus
+   - Interact (2)
+   - Craft (4) Paralyzed (1)
+   - Apply (2) Virologist-2 (2) Paralyzed (1)
+
+**Elvárt eredmény:** Az elkészített ágens eltűnik a tárból, elkezd hatni a másik virológuson.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 12: Ágens alkalmazása magára
+
+**Leírás:** Az elkészített ágens saját magára kenése.
+
+**Lépések:**
+
+1. Első virológus lépései
+   - Move (1) Storage-3 (6)
+   - Interact (2)
+   - Move (1) Lab-3 (1)
+2. Másik két virológus akciói
+3. Újra az első virológus
+   - Interact (2)
+   - Craft (4) Paralyzed (1)
+   - Apply (3) Virologist-1 (1) Paralyzed (1)
+
+**Elvárt eredmény:** Az elkészített ágens eltűnik a tárból, elkezd hatni magán.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 13: Paralyzed hatás
+
+**Leírás:** A virológus lebénul a rá kent ágens miatt.
+
+**Lépések:**
+
+1. Első virológus lépései
+   - Move (1) Storage-3 (6)
+   - Interact (2)
+   - Move (1) Lab-3 (1)
+2. Második virológus
+   - Move (1) Lab-3 (7)
+3. Maradék lépések (Interact 2. és 3. virológusnál)
+4. Újra az első virológus
+   - Interact (2)
+   - Craft (4) Paralyzed (1)
+   - Apply (2) Virologist-2 (2) Paralyzed (1)
+
+**Elvárt eredmény:** A második virológus bénult, nem tud semmilyen akciót végrehajtani, kimarad egy körből.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** -
+
+---
+
+## Teszteset 14: Felszerelés eldobása
 
 **Leírás:** A virológus a nála lévő felszerelések közül a választottat eldobja.
 
@@ -221,7 +297,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
-## Teszteset 12: Megfertőződés medvevírussal
+## Teszteset 15: Megfertőződés medvevírussal
 
 **Leírás:** A virológus olyan laborra lép, ahol megfertőződik a medvevírussal.
 
@@ -238,7 +314,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
-## Teszteset 13: Medvevírus hatása
+## Teszteset 16: Medvevírus hatása
 
 **Leírás:** A virológus medvevírussal fertőzött. Ennek hatására kontrollálatlanul mozog, a játékos nem tudja irányítani.
 
