@@ -331,6 +331,35 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 ---
 
+## Teszteset 17: Kesztyű hatása
+
+**Leírás:** Ha egy virológusnál kesztyű van, akkor a rá kent ágenseket visszakeni a kezdeményezőre.
+
+**Lépések:**
+
+1. Első virológus
+   - Move (1) Shelter-1 (1)
+   - Interact (2)
+   - Move (1) Lab-3 (4)
+2. Második virológus
+   - Move (1) Storage-3 (6)
+   - Interact (2)
+   - Move (1) Lab-3 (1)
+3. Harmadik és első virológus
+   - 3x Interact (2)
+4. Második virológus
+   - Interact (2)
+   - Craft (4) Paralyzed (1)
+   - Apply (3) Virologist-1 (1) Paralyzed (1)
+
+**Elvárt eredmény:** Virológus-1 visszakeni Virológus-2-re az ágenst, így az lebénul.
+
+**Siker/hiba:** Siker
+
+**Megjegyzések:** [További megjegyzések, észrevételek vagy problémák]
+
+---
+
 ## Teszteset X: [Teszteset neve]
 
 **Leírás:** [Rövid leírás a tesztesetről]
