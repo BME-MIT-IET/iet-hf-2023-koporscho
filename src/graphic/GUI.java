@@ -32,10 +32,10 @@ public class GUI extends JFrame{
     private final Color colorBGR = Color.black;
 
     /** Az ablak szélességét tárolja.*/
-    private int wWIDTH = 1536;
+    private int wWIDTH = 1920;
 
     /** Az ablak magasságát tárolja.*/
-    private final int wHEIGHT = 552+350;
+    private final int wHEIGHT = 1080;
 
     /** Használt betűtípusokat tárolása.*/
     private Font font1 = null;
@@ -109,25 +109,32 @@ public class GUI extends JFrame{
         for (koporscho.Character v: gc.GetChQueue()) {
             ((Virologist)v).AddView(new VirologistView());
         }
-        JPanel UIPanel = new JPanel();
 
-        UIPanel.setBackground(colorBGR);
+        JPanel topPanel = new JPanel();
+        topPanel.setBackground(colorBGR);
+        topPanel.add(bgrPanel);
 
-        contentPane.setPreferredSize(new Dimension(wWIDTH, wHEIGHT));
-        contentPane.setBackground(colorBGR);
-        contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
-        contentPane.add(bgrPanel);
-        UIPanel.setLayout(new BoxLayout(UIPanel, BoxLayout.X_AXIS));
-        UIPanel.add(attrPanel);
-        UIPanel.add(eqPanel);
-        UIPanel.add(muPanel);
-        UIPanel.add(conPanel);
-        UIPanel.add(mapPanel);
-        contentPane.add(UIPanel);
-        setContentPane(contentPane);
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        bottomPanel.setBackground(colorBGR);
+        bottomPanel.add(attrPanel);
+        bottomPanel.add(eqPanel);
+        bottomPanel.add(muPanel);
+        bottomPanel.add(conPanel);
+        bottomPanel.add(mapPanel);
+
+        JScrollPane scrollPane = new JScrollPane(bottomPanel);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBackground(colorBGR);
+        mainPanel.add(topPanel, BorderLayout.CENTER);
+        mainPanel.add(scrollPane, BorderLayout.SOUTH);
+
+        setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
-        setResizable(false);
+        setResizable(true);
         setTitle("Koporscho TM: Blind Virologists");
         addKeyListener(new KL());
     }
