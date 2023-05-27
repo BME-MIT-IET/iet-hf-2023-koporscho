@@ -15,11 +15,35 @@
     </properties>
 
     <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>src/test</testSourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>res</directory>
+                <targetPath>${project.build.outputDirectory}/res</targetPath>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>res</directory>
+                <targetPath>${project.build.outputDirectory}/res</targetPath>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>*</include>
+                    <include>**/*</include>
+                </includes>
+            </testResource>
+        </testResources>
+        
         <plugins>
             <plugin>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-maven-plugin</artifactId>
-            <version>4.7.2.1</version>
+            <version>4.7.3</version>
             <configuration>
                 <xmlOutput>true</xmlOutput>
                 <failOnError>false</failOnError>
