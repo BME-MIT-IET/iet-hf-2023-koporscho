@@ -10,7 +10,7 @@ import java.util.Random;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : StatusEffect.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szabó Egon, Biró Ferenc, Tóth Bólint, Ferge Mótó, Rahmi Dóniel
 //
 //
 

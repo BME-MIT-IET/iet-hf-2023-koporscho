@@ -6,7 +6,7 @@ package koporscho;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : Materials.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szabó Egon, Biró Ferenc, Tóth Bólint, Ferge Mótó, Rahmi Dóniel
 //
 //
 

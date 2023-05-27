@@ -1,3 +1,4 @@
+Rahmi Daniel WIFRTR https://github.com/rahmidaniel
 - A projektet az IntelliJ IDEA segítségével kibővítettem Maven támogatással.
 - Konfiguráltam a projekt pom.xml fájlját úgy, hogy tartalmazza a Cucumber és JUnit dependency-ket.
 - Beállítottam a szükséges Maven plugin-okat, beleértve a Maven Surefire plugin-t a tesztek futtatásához.
