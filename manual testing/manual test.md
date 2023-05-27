@@ -33,7 +33,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 **Siker/hiba:** Siker
 
-**Megjegyzések:** -
+**Megjegyzések:** A hátralévő akciók száma lelóg a képernyőről.
 
 ---
 
@@ -356,7 +356,7 @@ A további teszteseteknél feltételezzük ennek helyes működését, mivel min
 
 **Siker/hiba:** Siker
 
-**Megjegyzések:** [További megjegyzések, észrevételek vagy problémák]
+**Megjegyzések:** -
 
 ---
 
