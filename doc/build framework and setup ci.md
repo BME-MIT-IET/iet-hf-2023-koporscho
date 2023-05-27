@@ -1,1 +1,6 @@
-Added Maven framework to the project. Created pom.xml, manifest file, and the base for a maven build GitHub workflow. It should be easy to add testing to the workflow.
+- A projektet az IntelliJ IDEA segítségével kibővítettem Maven támogatással.
+- Konfiguráltam a projekt pom.xml fájlját úgy, hogy tartalmazza a Cucumber és JUnit dependency-ket.
+- Beállítottam a szükséges Maven plugin-okat, beleértve a Maven Surefire plugin-t a tesztek futtatásához.
+- Hozzáadtam egy GitHub Actions workflow-t azzal, hogy létrehoztam egy YAML fájlt (.github/workflows/maven.yml) a repository-ban.
+- A workflow-t úgy konfiguráltam, hogy fusson minden push és pull request eseményre a main branch-en.
+- Támogatást nyújtottam csapat többi tagjának az IntelliJ beépített Maven funkcióinak használatához, hogy futtathassák és bővíthessék a projektet, például a tesztek futtatásával és a Maven parancsokkal.
