@@ -7,7 +7,6 @@ import koporscho.Agent;
 import koporscho.Materials;
 import koporscho.StatusEffect;
 import koporscho.Virologist;
-import org.assertj.core.*;
 
 import java.util.Objects;
 
@@ -40,5 +39,4 @@ public class AgentCraftingStepDefinitions {
             assertThat(agentToCraft).isNotIn(virologist.GetAgentInventory());
         }
     }
-
 }

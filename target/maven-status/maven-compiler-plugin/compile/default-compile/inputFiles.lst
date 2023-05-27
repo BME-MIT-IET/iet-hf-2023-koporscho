@@ -9,11 +9,13 @@ C:\repos\iet-hf-2023-koporscho\src\koporscho\Shelter.java
 C:\repos\iet-hf-2023-koporscho\src\graphic\GUI.java
 C:\repos\iet-hf-2023-koporscho\src\graphic\GameControllerView.java
 C:\repos\iet-hf-2023-koporscho\src\test\java\AgentCraftingStepDefinitions.java
+C:\repos\iet-hf-2023-koporscho\src\test\java\ChopStepDefinitions.java
 C:\repos\iet-hf-2023-koporscho\src\graphic\VirologistView.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\Materials.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\StatusEffect.java
 C:\repos\iet-hf-2023-koporscho\src\proto\Prototype.java
 C:\repos\iet-hf-2023-koporscho\src\proto\Main.java
+C:\repos\iet-hf-2023-koporscho\src\test\java\AgentApplyingStepDefinitions.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\GameMap.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\Virologist.java
 C:\repos\iet-hf-2023-koporscho\src\test\java\RunCucumberTest.java
@@ -23,6 +25,9 @@ C:\repos\iet-hf-2023-koporscho\src\koporscho\Equipment.java
 C:\repos\iet-hf-2023-koporscho\src\graphic\View.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\GameController.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\Field.java
+C:\repos\iet-hf-2023-koporscho\src\test\java\BearDestroyingStorageStepDefinitions.java
 C:\repos\iet-hf-2023-koporscho\src\graphic\IViewable.java
 C:\repos\iet-hf-2023-koporscho\src\koporscho\Lab.java
 C:\repos\iet-hf-2023-koporscho\src\proto\Test.java
+C:\repos\iet-hf-2023-koporscho\src\test\java\MovingStepDefinitions.java
+C:\repos\iet-hf-2023-koporscho\src\test\java\StealingStepDefinitions.java

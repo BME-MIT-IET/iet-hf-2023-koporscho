@@ -5,45 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6a58e4f-dc30-4535-ade0-f1a884c719bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AgentCraftingStepDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistic.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koporscho.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/runner/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RunCucumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/stepdefs/AgentCraftingStepDefinitions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/stepdefs/StepDefinitions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/agent_crafting.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/agent_crafting.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/is_it_friday_yet.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/java/tests/runner/RunCucumberTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/java/tests/stepdefs/AgentCraftingStepDefinitions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/java/tests/stepdefs/StepDefinitions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/resources/features/agent_crafting.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/resources/features/agent_crafting.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/resources/features/is_it_friday_yet.feature" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AgentApplyingStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BearDestroyingStorageStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ChopStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MovingStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StealingStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/agent_applying.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/bear_destroying_storage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/chop.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/moving.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/stealing.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AgentCraftingStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AgentCraftingStepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/java/AgentCraftingStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/java/AgentCraftingStepDefinitions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2023-05-24T18-27-58_923.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-test.java.tests.runner.RunCucumberTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.java.tests.runner.RunCucumberTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/agent_crafting.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/agent_crafting.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/is_it_friday_yet.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-test.java.RunCucumberTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-test.java.RunCucumberTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.java.RunCucumberTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/test.java.RunCucumberTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,6 +59,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/repos/iet-hf-2023-koporscho",
     "node.js.detected.package.eslint": "true",
@@ -83,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685178331849</updated>
-      <workItem from="1685178332744" duration="531000" />
+      <workItem from="1685178332744" duration="6549000" />
     </task>
     <servers />
   </component>

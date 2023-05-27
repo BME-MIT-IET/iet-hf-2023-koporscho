@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.java.RunCucumberTest" time="0.757" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.java.RunCucumberTest" time="0.863" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="HU"/>
     <property name="sun.boot.library.path" value="C:\Users\szabo\.jdks\corretto-18.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\szabo\AppData\Local\Temp\surefire8515033944504979774\surefirebooter-20230527111440682_3.jar C:\Users\szabo\AppData\Local\Temp\surefire8515033944504979774 2023-05-27T11-14-40_482-jvmRun1 surefire-20230527111440682_1tmp surefire_0-20230527111440682_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\szabo\AppData\Local\Temp\surefire16559235283941750019\surefirebooter-20230527125442731_3.jar C:\Users\szabo\AppData\Local\Temp\surefire16559235283941750019 2023-05-27T12-54-42_523-jvmRun1 surefire-20230527125442731_1tmp surefire_0-20230527125442731_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\repos\iet-hf-2023-koporscho\target\test-classes;C:\repos\iet-hf-2023-koporscho\target\classes;C:\Users\szabo\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\szabo\.m2\repository\net\bytebuddy\byte-buddy\1.12.21\byte-buddy-1.12.21.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-java\7.12.0\cucumber-java-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-core\7.12.0\cucumber-core-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-gherkin\7.12.0\cucumber-gherkin-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.12.0\cucumber-gherkin-messages-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\tag-expressions\5.0.1\tag-expressions-5.0.1.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\szabo\.m2\repository\io\cucumber\datatable\7.12.0\datatable-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-plugin\7.12.0\cucumber-plugin-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\docstring\7.12.0\docstring-7.12.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\html-formatter\20.3.0\html-formatter-20.3.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\szabo\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\szabo\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\szabo\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.12.0\cucumber-junit-platform-engine-7.12.0.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-suite\1.9.3\junit-platform-suite-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.9.3\junit-platform-suite-engine-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.9.3\junit-platform-suite-commons-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.3\junit-platform-launcher-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-suite-api\1.9.3\junit-platform-suite-api-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\szabo\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\szabo\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\szabo\AppData\Local\Temp\surefire8515033944504979774\surefirebooter-20230527111440682_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\szabo\AppData\Local\Temp\surefire16559235283941750019\surefirebooter-20230527125442731_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.2+9-FR"/>
@@ -58,7 +58,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="Example #1.1" classname="Examples" time="0.249">
+  <testcase name="Example #1.1" classname="Examples" time="0.21">
+    <system-out><![CDATA[
+Scenario Outline: The virologist applies an agent in their inventory to another virologist, &amp#27;[90m# features/agent_applying.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist and the target stand on the same field&amp#27;[0m                               &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_virologist_and_the_target_stand_on_the_same_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe virologist has an agent in their inventory&amp#27;[0m                                        &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_virologist_has_an_agent_in_their_inventory()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target has immunity? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                                                        &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_target_has_immunity(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to apply the agent&amp#27;[0m                                                          &amp#27;[90m# test.java.AgentApplyingStepDefinitions.they_try_to_apply_the_agent()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe agents effect should be applied to the target? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                              &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_agents_effect_should_be_applied_to_the_target(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe agent should be removed from their inventory&amp#27;[0m                                      &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_agent_should_be_removed_from_their_inventory()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.1" classname="Examples" time="0.031">
     <system-out><![CDATA[
 Scenario Outline: The virologist can only craft an agent if they have enough materials and know the recipe for it &amp#27;[90m# features/agent_crafting.feature:13&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist has &amp#27;[0m&amp#27;[32m&amp#27;[1m8&amp#27;[0m&amp#27;[32m nucleotide and &amp#27;[0m&amp#27;[32m&amp#27;[1m8&amp#27;[0m&amp#27;[32m amino acid&amp#27;[0m                                                          &amp#27;[90m# test.java.AgentCraftingStepDefinitions.the_virologist_has_nucleotide_and_amino_acid(java.lang.Integer,java.lang.Integer)&amp#27;[0m
@@ -68,7 +79,29 @@ Scenario Outline: The virologist can only craft an agent if they have enough mat
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mtheir inventory should have the agent? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                                                               &amp#27;[90m# test.java.AgentCraftingStepDefinitions.their_inventory_should_have_the_agent(java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.2" classname="Examples" time="0.011">
+  <testcase name="Example #1.1" classname="Examples" time="0.016">
+    <system-out><![CDATA[
+Scenario Outline: The virologist tries to steal an equipment from another virologist, &amp#27;[90m# features/stealing.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist and its target stand on the same field&amp#27;[0m                         &amp#27;[90m# test.java.StealingStepDefinitions.the_virologist_and_its_target_stand_on_the_same_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target has an equipment&amp#27;[0m                                                     &amp#27;[90m# test.java.StealingStepDefinitions.the_target_has_an_equipment()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target is paralyzed? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                                                  &amp#27;[90m# test.java.StealingStepDefinitions.the_target_is_paralyzed(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to steal the equipment from the target&amp#27;[0m                                &amp#27;[90m# test.java.StealingStepDefinitions.they_try_to_steal_the_equipment_from_the_target()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe equipment should get added to their inventory? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                       &amp#27;[90m# test.java.StealingStepDefinitions.the_equipment_should_get_added_to_their_inventory(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mbe removed from the targets inventory? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                                    &amp#27;[90m# test.java.StealingStepDefinitions.be_removed_from_the_targets_inventory(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.2" classname="Examples" time="0.017">
+    <system-out><![CDATA[
+Scenario Outline: The virologist applies an agent in their inventory to another virologist, &amp#27;[90m# features/agent_applying.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist and the target stand on the same field&amp#27;[0m                               &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_virologist_and_the_target_stand_on_the_same_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe virologist has an agent in their inventory&amp#27;[0m                                        &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_virologist_has_an_agent_in_their_inventory()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target has immunity? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                                                         &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_target_has_immunity(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to apply the agent&amp#27;[0m                                                          &amp#27;[90m# test.java.AgentApplyingStepDefinitions.they_try_to_apply_the_agent()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe agents effect should be applied to the target? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                             &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_agents_effect_should_be_applied_to_the_target(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe agent should be removed from their inventory&amp#27;[0m                                      &amp#27;[90m# test.java.AgentApplyingStepDefinitions.the_agent_should_be_removed_from_their_inventory()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.2" classname="Examples" time="0.018">
     <system-out><![CDATA[
 Scenario Outline: The virologist can only craft an agent if they have enough materials and know the recipe for it &amp#27;[90m# features/agent_crafting.feature:14&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist has &amp#27;[0m&amp#27;[32m&amp#27;[1m2&amp#27;[0m&amp#27;[32m nucleotide and &amp#27;[0m&amp#27;[32m&amp#27;[1m1&amp#27;[0m&amp#27;[32m amino acid&amp#27;[0m                                                          &amp#27;[90m# test.java.AgentCraftingStepDefinitions.the_virologist_has_nucleotide_and_amino_acid(java.lang.Integer,java.lang.Integer)&amp#27;[0m
@@ -78,7 +111,18 @@ Scenario Outline: The virologist can only craft an agent if they have enough mat
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mtheir inventory should have the agent? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                                                                &amp#27;[90m# test.java.AgentCraftingStepDefinitions.their_inventory_should_have_the_agent(java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="Example #1.3" classname="Examples" time="0.01">
+  <testcase name="Example #1.2" classname="Examples" time="0.013">
+    <system-out><![CDATA[
+Scenario Outline: The virologist tries to steal an equipment from another virologist, &amp#27;[90m# features/stealing.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist and its target stand on the same field&amp#27;[0m                         &amp#27;[90m# test.java.StealingStepDefinitions.the_virologist_and_its_target_stand_on_the_same_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target has an equipment&amp#27;[0m                                                     &amp#27;[90m# test.java.StealingStepDefinitions.the_target_has_an_equipment()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe target is paralyzed? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                                                   &amp#27;[90m# test.java.StealingStepDefinitions.the_target_is_paralyzed(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to steal the equipment from the target&amp#27;[0m                                &amp#27;[90m# test.java.StealingStepDefinitions.they_try_to_steal_the_equipment_from_the_target()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe equipment should get added to their inventory? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                        &amp#27;[90m# test.java.StealingStepDefinitions.the_equipment_should_get_added_to_their_inventory(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mbe removed from the targets inventory? &amp#27;[0m&amp#27;[32m&amp#27;[1m"No"&amp#27;[0m                                     &amp#27;[90m# test.java.StealingStepDefinitions.be_removed_from_the_targets_inventory(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.3" classname="Examples" time="0.012">
     <system-out><![CDATA[
 Scenario Outline: The virologist can only craft an agent if they have enough materials and know the recipe for it &amp#27;[90m# features/agent_crafting.feature:15&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist has &amp#27;[0m&amp#27;[32m&amp#27;[1m5&amp#27;[0m&amp#27;[32m nucleotide and &amp#27;[0m&amp#27;[32m&amp#27;[1m6&amp#27;[0m&amp#27;[32m amino acid&amp#27;[0m                                                          &amp#27;[90m# test.java.AgentCraftingStepDefinitions.the_virologist_has_nucleotide_and_amino_acid(java.lang.Integer,java.lang.Integer)&amp#27;[0m
@@ -86,6 +130,35 @@ Scenario Outline: The virologist can only craft an agent if they have enough mat
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe virologist knows the recipe&amp#27;[0m                                                                             &amp#27;[90m# test.java.AgentCraftingStepDefinitions.the_virologist_knows_the_recipe()&amp#27;[0m
   &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to craft an agent&amp#27;[0m                                                                                 &amp#27;[90m# test.java.AgentCraftingStepDefinitions.they_try_to_craft_an_agent()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mtheir inventory should have the agent? &amp#27;[0m&amp#27;[32m&amp#27;[1m"Yes"&amp#27;[0m                                                               &amp#27;[90m# test.java.AgentCraftingStepDefinitions.their_inventory_should_have_the_agent(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="The virologist infected with bear steps on a storage field and destroys the materials in it" classname="Bear destroys storage" time="0.021">
+    <system-out><![CDATA[
+Scenario: The virologist infected with bear steps on a storage field and destroys the materials in it &amp#27;[90m# features/bear_destroying_storage.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist is infected with bear&amp#27;[0m                                                          &amp#27;[90m# test.java.BearDestroyingStorageStepDefinitions.the_virologist_is_infected_with_bear()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32ma neighboring storage field has materials in it&amp#27;[0m                                                 &amp#27;[90m# test.java.BearDestroyingStorageStepDefinitions.a_neighboring_storage_field_has_materials_in_it()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthe bear steps on a neighboring storage field&amp#27;[0m                                                  &amp#27;[90m# test.java.BearDestroyingStorageStepDefinitions.the_bear_steps_on_a_neighboring_storage_field()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe materials in the storage get destroyed&amp#27;[0m                                                     &amp#27;[90m# test.java.BearDestroyingStorageStepDefinitions.the_materials_in_the_storage_get_destroyed()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="The virologist chops the target with an axe and the target dies" classname="Chop with an axe" time="0.02">
+    <system-out><![CDATA[
+Scenario: The virologist chops the target with an axe and the target dies &amp#27;[90m# features/chop.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist and the chop target stand on the same field&amp#27;[0m        &amp#27;[90m# test.java.ChopStepDefinitions.the_virologist_and_the_chop_target_stand_on_the_same_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe virologist has an axe in their inventory&amp#27;[0m                        &amp#27;[90m# test.java.ChopStepDefinitions.the_virologist_has_an_axe_in_their_inventory()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey chop the target with the axe&amp#27;[0m                                  &amp#27;[90m# test.java.ChopStepDefinitions.they_chop_the_target_with_the_axe()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe target dies&amp#27;[0m                                                    &amp#27;[90m# test.java.ChopStepDefinitions.the_target_dies()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32maxes durability gets decreased by one&amp#27;[0m                               &amp#27;[90m# test.java.ChopStepDefinitions.axes_durability_gets_decreased_by_one()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="The virologist moves to a neighboring field while decreasing their action points by one" classname="Moving" time="0.014">
+    <system-out><![CDATA[
+Scenario: The virologist moves to a neighboring field while decreasing their action points by one &amp#27;[90m# features/moving.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mthe virologist stands on a field&amp#27;[0m                                                          &amp#27;[90m# test.java.MovingStepDefinitions.the_virologist_stands_on_a_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthey have at least one action point&amp#27;[0m                                                         &amp#27;[90m# test.java.MovingStepDefinitions.they_have_at_least_one_action_point()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthey try to move to a neighboring field&amp#27;[0m                                                    &amp#27;[90m# test.java.MovingStepDefinitions.they_try_to_move_to_a_neighboring_field()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mtheir new position should be set to the field&amp#27;[0m                                              &amp#27;[90m# test.java.MovingStepDefinitions.their_new_position_should_be_set_to_the_field()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mtheir action points should be decreased by one&amp#27;[0m                                              &amp#27;[90m# test.java.MovingStepDefinitions.their_action_points_should_be_decreased_by_one()&amp#27;[0m
 ]]></system-out>
   </testcase>
 </testsuite>
