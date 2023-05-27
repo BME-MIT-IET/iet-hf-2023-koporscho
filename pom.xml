@@ -38,12 +38,13 @@
                 </includes>
             </testResource>
         </testResources>
-        
+
         <plugins>
             <plugin>
             <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-maven-plugin</artifactId>
+            <artifactId>spotbugs</artifactId>
             <version>4.7.3</version>
+            <type>pom</type>
             <configuration>
                 <xmlOutput>true</xmlOutput>
                 <failOnError>false</failOnError>
