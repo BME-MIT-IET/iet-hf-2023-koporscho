@@ -1,4 +1,4 @@
-package test.java.tests.runner;
+package test.java;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
