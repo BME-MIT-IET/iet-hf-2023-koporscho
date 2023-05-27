@@ -20,15 +20,15 @@
 
         <resources>
             <resource>
-                <directory>res</directory>
-                <targetPath>${project.build.outputDirectory}/res</targetPath>
+                <directory>target</directory>
+                <targetPath>${project.build.outputDirectory}/target</targetPath>
             </resource>
         </resources>
 
         <testResources>
             <testResource>
-                <directory>res</directory>
-                <targetPath>${project.build.outputDirectory}/res</targetPath>
+                <directory>target</directory>
+                <targetPath>${project.build.outputDirectory}/target</targetPath>
             </testResource>
             <testResource>
                 <directory>src/test/resources</directory>
@@ -38,11 +38,11 @@
                 </includes>
             </testResource>
         </testResources>
-
+        
         <plugins>
             <plugin>
             <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs</artifactId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
             <version>4.7.3</version>
             <configuration>
                 <xmlOutput>true</xmlOutput>
