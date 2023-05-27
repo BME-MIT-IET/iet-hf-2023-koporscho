@@ -14,4 +14,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <version>4.7.2.1</version>
+            <configuration>
+                <xmlOutput>true</xmlOutput>
+                <failOnError>false</failOnError>
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
