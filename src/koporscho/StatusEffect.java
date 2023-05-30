@@ -28,6 +28,7 @@ public class StatusEffect {
 	private int duration;
 	private boolean bear;
 	private boolean dead;
+	private Random random = SecureRandom.getInstanceStrong();
 
 
 	/** Implicit konstruktor a StatusEffect számára*/
@@ -88,10 +89,8 @@ public class StatusEffect {
 		ArrayList<Field> neighbours = target.GetField().GetNeighbors();
 		// Random index from neighbours
 		int i = 0;
-
 		if(neighbours != null &&neighbours.size()!=0) {
 			if (neighbours.size() > 1) {
-				Random random = new Random();
 				i = random.nextInt(neighbours.size() - 1);
 			}
 
