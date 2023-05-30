@@ -7,11 +7,15 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * GameContorllerView osztály, amely a teljes játéktér újrarajzolásáért és végeredmény megjelenítéséért felel.
  */
-public class GameControllerView extends View{
+public class GameControllerView extends View implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 112312350207L;
     /**
      * A teljes játéktér újrarajzolását végző függvény.
      * Ha a játék véget ért, megjelenít valamely végeredményt prezentáló képet, ezzel végeredményt hirdetve.

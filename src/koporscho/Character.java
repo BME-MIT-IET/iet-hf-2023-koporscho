@@ -68,29 +68,34 @@ public abstract class Character {
 			diceRoll = (float) Math.random();
 
 			if (diceRoll > immunity) {
-				StatusEffect e = new StatusEffect(agent.GetEffect());
-				activeEffects.add(e);
-				// Bear Agent
-				if(e.GetBear()){
-					if(!((Virologist)this).GetName().contains("Bear")) {
-						StringBuilder bs = new StringBuilder();
-						bs.insert(0, "Bear-");
-						bs.insert(5, ((Virologist) this).GetName().charAt(((Virologist) this).GetName().length()-1));
-						((Virologist) this).SetName(bs.toString());
-					}
-					((Virologist)this).SetApCurrent(0);
-					((Virologist)this).GetRecipes().clear();
-					((Virologist)this).GetAgentInventory().clear();
-					((Virologist)this).SetMaterials(new Materials(0,0));
-					((Virologist)this).SetMaxMaterials(new Materials(0,0));
-					for (Equipment eq : ((Virologist) this).GetEquipment()) {
-						activeEffects.remove(eq.GetEffect());
-					}
-					((Virologist) this).GetEquipment().clear();
-
-					GameController.getInstance().bearCount++;
-				}
+				DoTheBear(agent);
 			}
+		}
+	}
+
+	public void DoTheBear(Agent agent)
+	{
+		StatusEffect e = new StatusEffect(agent.GetEffect());
+		activeEffects.add(e);
+		// Bear Agent
+		if(e.GetBear()){
+			if(!((Virologist)this).GetName().contains("Bear")) {
+				StringBuilder bs = new StringBuilder();
+				bs.insert(0, "Bear-");
+				bs.insert(5, ((Virologist) this).GetName().charAt(((Virologist) this).GetName().length()-1));
+				((Virologist) this).SetName(bs.toString());
+			}
+			((Virologist)this).SetApCurrent(0);
+			((Virologist)this).GetRecipes().clear();
+			((Virologist)this).GetAgentInventory().clear();
+			((Virologist)this).SetMaterials(new Materials(0,0));
+			((Virologist)this).SetMaxMaterials(new Materials(0,0));
+			for (Equipment eq : ((Virologist) this).GetEquipment()) {
+				activeEffects.remove(eq.GetEffect());
+			}
+			((Virologist) this).GetEquipment().clear();
+
+			GameController.getInstance().bearCount++;
 		}
 	}
 
