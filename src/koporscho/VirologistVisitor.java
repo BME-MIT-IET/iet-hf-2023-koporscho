@@ -32,7 +32,7 @@ public class VirologistVisitor implements IVis {
 
 	/** A karakter és a város közötti interakcióért felelős */
 	public void InteractCity() {
-		//System.out.println("This has no use in the game yet.");
+		/* This returns nothing */
 	}
 	
 	/** A karakter és az óvóhely közötti interakcióért felelős.*/
@@ -61,8 +61,7 @@ public class VirologistVisitor implements IVis {
 	public void InteractShelter() {
 		Equipment temp = ((Shelter)targetField).GetEquipment();
 		((Shelter)targetField).RemoveEquipment();
-		int s;
-		if((s = sourceVirologist.GetEquipment().size()) == 3)
+		if(sourceVirologist.GetEquipment().size() == 3)
 		{
 			((Shelter)targetField).AddEquipment(sourceVirologist.GetEquipment().get(0));
 			sourceVirologist.RemoveEquipment(sourceVirologist.GetEquipment().get(0));

@@ -4,6 +4,8 @@ import graphic.IViewable;
 import graphic.SaveLoader;
 import graphic.View;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,12 +24,13 @@ import java.util.Scanner;
 /**
  * A körökért és a bemenetek kezeléséért felelős osztály.
  */
-public class GameController implements IViewable {
+public class GameController implements IViewable, Serializable {
+    @Serial
+    private static final long serialVersionUID = 1905122041950251207L;
     /**
      * Az aktuális játék játékterét tárolja.
      */
     private GameMap gameMap;
-    static private GameController gc = new GameController();
 
     /**
      * A játékban szereplő karaktereket tárolja.
@@ -160,7 +163,7 @@ public class GameController implements IViewable {
     /**
      * Leállítja a játékot, a paraméterként megadott karaktert kihirdetve győztesnek.
      */
-    public void EndGame(Character c) {
+    public void EndGame() {
         gameRunning = false;
         NotifyViews();
     }
@@ -170,13 +173,13 @@ public class GameController implements IViewable {
      */
     public void NextTurn() {
         if (bearCount == chQueue.size()) {
-            EndGame(null);
+            EndGame();
             NotifyViews();
             return;
         }
         if (agents.size() != 0 && chQueue.element().GetRecipeCount() == agents.size()) {
             win = true;
-            EndGame(chQueue.element());
+            EndGame();
             NotifyViews();
             return;
         }
@@ -209,7 +212,6 @@ public class GameController implements IViewable {
      */
     public void Reset() {
         gameRunning = false;
-        gc = new GameController();
         chQueue.clear();
         agents.clear();
         equipment.clear();

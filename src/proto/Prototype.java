@@ -28,7 +28,9 @@ public class Prototype {
     public static BufferedWriter writer;
 
     public static boolean random = false;
-
+      private Prototype() {
+        throw new IllegalStateException("Utility class");
+        }
     /**
      * A Prototípus futását megvalósító függvény, itt választhatóak ki a különböző tesztesetek futtatásra.
      */

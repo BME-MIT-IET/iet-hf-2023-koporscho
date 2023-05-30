@@ -92,7 +92,8 @@ public class Agent {
 	 * @return Az ágens maradék élettartama.
 	 */
 	public int ReduceLifespan() {
-		return lifespan -= 1;
+		lifespan -= 1;
+		return lifespan;
 	}
 
 	/**

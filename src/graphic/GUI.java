@@ -23,7 +23,7 @@ public class GUI extends JFrame{
     private final HashMap<Field, Point> fieldCentres = new HashMap<>();
 
     /** Egy Game Controllert tárol.*/
-    private final GameController gc = GameController.getInstance();
+    private static final GameController gc = GameController.getInstance();
 
     /** Egy Game Controller nézetet tárol.*/
     private final GameControllerView gcView = new GameControllerView();
@@ -177,6 +177,7 @@ public class GUI extends JFrame{
             img.getGraphics().clearRect(0, 0, img.getWidth(null), img.getHeight(null));
         }
         /** Az interfacet kirajzoló függvény.*/
+        @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
         }
@@ -251,6 +252,7 @@ public class GUI extends JFrame{
         BufferedImage bgr, status, portrait;
 
         /** Az attribútum kezelőfelületét frissítő függvény.*/
+        @Override
         public void update() {
             super.update();
             Graphics gr = img.getGraphics();
@@ -678,7 +680,7 @@ public class GUI extends JFrame{
                 case STEAL_EQUIPMENT_STEP1:
                     g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
-                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c++);
+                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c);
                         break;
                     }
                     for(int i=0; i < characters.size();i++){
@@ -769,8 +771,11 @@ public class GUI extends JFrame{
             gr.setColor(Color.WHITE);
             gr.setFont(font2);
             HashMap<Point, Integer> pointOffSets = new HashMap<>();
-            for(Virologist v: virLoc.keySet()) {
-                Point p = virLoc.get(v);
+            Point p = null;
+            Virologist v = null;
+            for(HashMap.Entry<Virologist, Point> entry: virLoc.entrySet()) {
+                p = entry.getValue();
+                v = entry.getKey();
                 Integer offset = pointOffSets.get(p);
                 int offs = offset == null ? 0 : offset;
                 if(bears.contains(v)) {
@@ -782,8 +787,8 @@ public class GUI extends JFrame{
                 pointOffSets.put(p, offs);
             }
             if(state == GUIState.MOVE) {
-                Virologist v = (Virologist) GameController.objectIDsInv.get(currID);
-                ArrayList<Field> neighbors = v.GetField().GetNeighbors();
+                Virologist vi = (Virologist) GameController.objectIDsInv.get(currID);
+                ArrayList<Field> neighbors = vi.GetField().GetNeighbors();
                 for(int i = 0; i < neighbors.size();i++) {
                     String str = String.format("%d",i+1);
                     Point pt = fieldCentres.get(neighbors.get(i));
@@ -815,7 +820,6 @@ public class GUI extends JFrame{
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            Graphics gr = img.getGraphics();
             g.drawImage(img, 0, 0, this);
             this.repaint();
         }

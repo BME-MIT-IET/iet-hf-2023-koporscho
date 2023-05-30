@@ -33,6 +33,10 @@ public class SaveLoader {
 
     /** A játékban szereplő státusz effektusokat tárolja.*/
     public static ArrayList<StatusEffect> statusEffects = new ArrayList<>();
+      
+    private SaveLoader() {
+        throw new IllegalStateException("Utility class");
+    }
 
     /** Implicit setter függvény a gamecontrollernek.*/
     public static void SetGc(GameController g){

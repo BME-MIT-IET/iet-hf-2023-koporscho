@@ -114,6 +114,7 @@ public class Lab extends Field {
 	 * A Lab osztály logger fügvénye, mely az adott labor tulajdonságait írja ki a standard kimentre és fájlba.
 	 * @throws java.io.IOException
 	 */
+	@Override
 	public void log() throws java.io.IOException{
 		super.log();
 

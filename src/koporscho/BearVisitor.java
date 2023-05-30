@@ -2,9 +2,6 @@ package koporscho;
 
 public class BearVisitor implements IVis {
 
-    /** Tárolja az elkövető Virológust*/
-    private final Virologist sourceVirologist;
-
     /** Referencia a mezőre, amin az interakció történik*/
     private final Field targetField;
 
@@ -13,7 +10,6 @@ public class BearVisitor implements IVis {
      * @param v Megfertőzött virológus.
      */
     public BearVisitor(Virologist v) {
-        sourceVirologist=v;
         targetField=v.GetField();
     }
     /** Nem csinál semmit, majd visszatér.*/

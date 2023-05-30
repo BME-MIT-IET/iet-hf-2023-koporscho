@@ -348,6 +348,7 @@ public class Virologist extends Character implements IViewable {
 	 *
 	 * @return karakter által ismert ágensek száma
 	 */
+	@Override
 	public int GetRecipeCount() {
 		return agentRecipes.size();
 	}
