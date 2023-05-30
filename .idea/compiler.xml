@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iet-hf-2023-koporscho" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Koporscho" target="17" />
-      <module name="koporscho" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

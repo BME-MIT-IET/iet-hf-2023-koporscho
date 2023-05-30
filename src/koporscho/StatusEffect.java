@@ -1,6 +1,7 @@
 package koporscho;
 import proto.Prototype;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
 //
@@ -28,7 +29,7 @@ public class StatusEffect {
 	private int duration;
 	private boolean bear;
 	private boolean dead;
-	private static Random random = new Random();
+	private static SecureRandom random = new SecureRandom();
 
 
 	/** Implicit konstruktor a StatusEffect számára*/

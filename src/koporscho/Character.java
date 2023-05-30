@@ -1,4 +1,5 @@
 package koporscho;
+import java.security.SecureRandom;
 import java.util.*;
 //
 //
@@ -65,7 +66,8 @@ public abstract class Character {
 			float immunity = 1-infectionChance;
 			float diceRoll;
 
-			diceRoll = (float) Math.random();
+			SecureRandom random = new SecureRandom();
+			diceRoll = random.nextFloat();
 
 			if (diceRoll > immunity) {
 				StatusEffect e = new StatusEffect(agent.GetEffect());
