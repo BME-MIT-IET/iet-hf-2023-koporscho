@@ -23,7 +23,10 @@ jobs:
           distribution: "temurin"
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B package --file pom.xml sonar:sonar -Dsonar.projectKey=BME-MIT-IET_iet-hf-2023-koporscho
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -36,10 +39,5 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn verify sonar:sonar -Dsonar.projectKey=BME-MIT-IET_iet-hf-2023-koporscho
       - name: Run BDD Tests
         run: mvn test
