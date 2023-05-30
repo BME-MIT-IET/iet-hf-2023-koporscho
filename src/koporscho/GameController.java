@@ -293,6 +293,9 @@ public class GameController implements IViewable, Serializable {
                     case "storage":
                         f = new Storage();
                         break;
+                    default:
+                        f = new City();
+                        break;
                 }
                 String id = proc[i + 1];
                 if (proc[i + 1].endsWith(";"))
