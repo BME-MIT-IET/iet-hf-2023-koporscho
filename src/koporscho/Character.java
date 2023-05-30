@@ -43,7 +43,7 @@ public abstract class Character {
 	public void HandleAgent(Character source, Agent agent, boolean reflected) {
 		boolean reflect = false;
 		if (!reflected)
-			checkReflect();
+			reflect = checkReflect();
 
 		if (reflect && source!= null) {
 			decreaseDurabilityOfEquipments();
