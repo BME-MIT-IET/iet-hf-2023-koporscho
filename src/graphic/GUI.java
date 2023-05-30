@@ -129,7 +129,7 @@ public class GUI extends JFrame implements Serializable {
         UIPanel.add(mapPanel);
         contentPane.add(UIPanel);
         setContentPane(contentPane);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setResizable(false);
         setTitle("Koporscho TM: Blind Virologists");
@@ -169,7 +169,7 @@ public class GUI extends JFrame implements Serializable {
         /** Az adott osztály neve.*/
         protected String name;
         /** Az adott osztály képe.*/
-        protected Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
+        protected transient Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
         /** Inicializáló függvény.*/
         public void init() {
             setPreferredSize(imgDim.get(name));
@@ -278,6 +278,12 @@ public class GUI extends JFrame implements Serializable {
             gr.drawString(aminoStr, 5,230+16);
             gr.drawString(nucleoStr, 5,246+16);
             gr.drawString(apStr, 5,262+16);
+            drawn(gr, statuses);
+            repaint();
+        }
+
+        public void drawn(Graphics gr, ArrayList<StatusEffect> statuses)
+        {
             int i = 0;
             int xOffs = 8;
             int yOffs = 8+128+32;
@@ -332,7 +338,6 @@ public class GUI extends JFrame implements Serializable {
                     drawn[7] = true;
                 }
             }
-            repaint();
         }
 
         /** Kontruktor, amely a tulajdonság kezelőfelületet létrehozza. */
@@ -569,6 +574,8 @@ public class GUI extends JFrame implements Serializable {
                     gr.drawImage(rec,0,0,null);break;
                 case 2:
                     gr.drawImage(field,0,0,null);break;
+                default:
+                    gr.drawImage(inv,0,0,null);break;
             }
             g.drawImage(img, 0, 0, null);
             this.repaint();

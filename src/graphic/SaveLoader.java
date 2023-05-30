@@ -61,6 +61,7 @@ public class SaveLoader {
             case "placeEquipment":placeEquipment(cmd);  break;
             case "placeAgent":placeAgent(cmd);  break;
             case "placeMaterials":placeMaterials(cmd);  break;
+            default: break;
         }
     }
 
