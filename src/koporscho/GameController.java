@@ -312,8 +312,6 @@ public class GameController implements IViewable {
                     f.SetNeighbors(neighborsArr);
                 }
             }
-        } finally {
-            sc.close();
         }
     }
 

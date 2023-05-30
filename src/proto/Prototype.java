@@ -490,11 +490,6 @@ public class Prototype {
             if(incorrect) System.out.print("FAILURE ---> Test: (failed at line: " + i + ") ");
             else System.out.print("SUCCESS ---> Test: ");
             System.out.println(menuOptions.get(selectedOption-1).fileName);
-        } finally {
-            br1.close();
-            br2.close();
-            fr1.close();
-            fr2.close();
         }
     }
 

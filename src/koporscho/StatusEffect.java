@@ -28,7 +28,7 @@ public class StatusEffect {
 	private int duration;
 	private boolean bear;
 	private boolean dead;
-	private Random random = SecureRandom.getInstanceStrong();
+	private static Random random = new Random();
 
 
 	/** Implicit konstruktor a StatusEffect számára*/
