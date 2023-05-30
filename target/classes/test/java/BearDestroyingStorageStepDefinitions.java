@@ -5,8 +5,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import koporscho.*;
 
-import java.util.ArrayList;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BearDestroyingStorageStepDefinitions {
@@ -32,7 +30,7 @@ public class BearDestroyingStorageStepDefinitions {
     }
     @Then("the materials in the storage get destroyed")
     public void the_materials_in_the_storage_get_destroyed() {
-        assertThat(storage.GetSupply().GetNucleotide()).isEqualTo(0);
-        assertThat(storage.GetSupply().GetAminoAcid()).isEqualTo(0);
+        assertThat(storage.GetSupply().GetNucleotide()).isZero();
+        assertThat(storage.GetSupply().GetAminoAcid()).isZero();
     }
 }

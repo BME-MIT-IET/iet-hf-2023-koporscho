@@ -30,7 +30,7 @@ public class BearDestroyingStorageStepDefinitions {
     }
     @Then("the materials in the storage get destroyed")
     public void the_materials_in_the_storage_get_destroyed() {
-        assertThat(storage.GetSupply().GetNucleotide()).isEqualTo(0);
-        assertThat(storage.GetSupply().GetAminoAcid()).isEqualTo(0);
+        assertThat(storage.GetSupply().GetNucleotide()).isZero();
+        assertThat(storage.GetSupply().GetAminoAcid()).isZero();
     }
 }
