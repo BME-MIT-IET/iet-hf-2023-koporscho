@@ -4,6 +4,8 @@ import koporscho.*;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /** A mentést és betöltést megvalósító osztály.*/
 public class SaveLoader {
@@ -42,7 +44,7 @@ public class SaveLoader {
     public static void SetGc(GameController g){
         gc=g;
     }
-
+    private static final Logger logger = Logger.getLogger(SaveLoader.class.getName());
     /**
      * A paraméterként kapott szöveges parancs felismerését végző függvény. Továbbítja a parancsat az azt tényleges végrehajtó függvénynek.
      * @param cmd
@@ -278,7 +280,7 @@ public class SaveLoader {
                     cmdProcess(data);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
 
         GameMap map=new GameMap(fields);

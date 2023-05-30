@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import koporscho.*;
 
 public class Prototype {
@@ -27,6 +30,7 @@ public class Prototype {
     private static final String fileName = "output.txt";
     public static BufferedWriter writer;
 
+    private static final Logger logger = Logger.getLogger(Prototype.class.getName());
     public static boolean random = false;
       private Prototype() {
         throw new IllegalStateException("Utility class");
@@ -81,7 +85,7 @@ public class Prototype {
                 else if(selectedOption == menuOptions.size()+1) running = false;
 
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
         }
     }
@@ -422,7 +426,7 @@ public class Prototype {
                     cmdProcess(data);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
 
         try {
@@ -430,7 +434,7 @@ public class Prototype {
             evaluateOutput();
         }
         catch (IOException e){
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
     }
 

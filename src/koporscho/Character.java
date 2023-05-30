@@ -43,19 +43,10 @@ public abstract class Character {
 	public void HandleAgent(Character source, Agent agent, boolean reflected) {
 		boolean reflect = false;
 		if (!reflected)
-			for (StatusEffect e : activeEffects) {
-				if (e.GetReflect()) {
-					reflect = true;
-					break;
-				}
-			}
+			reflect = checkReflect();
 
 		if (reflect && source!= null) {
-			for(Equipment e: ((Virologist)this).GetEquipment()){
-				if(e.GetEffect().GetReflect()){
-					e.DecreaseDurability();
-				}
-			}
+			decreaseDurabilityOfEquipments();
 			source.HandleAgent(this, agent, true);
 		}
 		else {
@@ -71,6 +62,24 @@ public abstract class Character {
 
 			if (diceRoll > immunity) {
 				DoTheBear(agent);
+			}
+		}
+	}
+
+	public boolean checkReflect()
+	{
+		for (StatusEffect e : activeEffects) {
+			if (e.GetReflect()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public void decreaseDurabilityOfEquipments()
+	{
+		for(Equipment e: ((Virologist)this).GetEquipment()){
+			if(e.GetEffect().GetReflect()){
+				e.DecreaseDurability();
 			}
 		}
 	}

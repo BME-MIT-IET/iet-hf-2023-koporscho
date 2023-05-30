@@ -1,0 +1,106 @@
+
+^
+java:S1192E"IDefine a constant instead of duplicating this literal "outputs/" 4 times.(×äòi
+t	java:S135â"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+†
+java:S1319"kThe type of "menuOptions" should be an interface such as "List" rather than the implementation "ArrayList".(Ş­¢ÿÿÿÿÿ
+
+java:S1319"fThe type of "objectIDs" should be an interface such as "Map" rather than the implementation "HashMap".(ß³ÈÖùÿÿÿÿ
+„
+java:S1319"iThe type of "objectIDsInv" should be an interface such as "Map" rather than the implementation "HashMap".(£ÅØııÿÿÿÿ
+
+java:S1319"fThe type of "fields" should be an interface such as "List" rather than the implementation "ArrayList".(ßâáªÿÿÿÿÿ
+†
+java:S1319"kThe type of "virologists" should be an interface such as "List" rather than the implementation "ArrayList".(¼óæşÿÿÿÿ
+
+java:S1319"fThe type of "agents" should be an interface such as "List" rather than the implementation "ArrayList".(üãÄŸıÿÿÿÿ
+~
+java:S1319"iThe type of "equipment" should be an interface such as "List" rather than the implementation "ArrayList".(—ğ“U
+ˆ
+java:S1319"mThe type of "statusEffects" should be an interface such as "List" rather than the implementation "ArrayList".(Ä¿ƒÿÿÿÿÿ
+g
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+g
+java:S1301¥"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+g
+java:S1301Á"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+r
+java:S1104"WMake menuOptions a static final constant or non-public and provide accessors if needed.(Ş­¢ÿÿÿÿÿ
+p
+java:S1104"UMake objectIDs a static final constant or non-public and provide accessors if needed.(ß³ÈÖùÿÿÿÿ
+s
+java:S1104"XMake objectIDsInv a static final constant or non-public and provide accessors if needed.(£ÅØııÿÿÿÿ
+m
+java:S1104"RMake fields a static final constant or non-public and provide accessors if needed.(ßâáªÿÿÿÿÿ
+r
+java:S1104"WMake virologists a static final constant or non-public and provide accessors if needed.(¼óæşÿÿÿÿ
+m
+java:S1104"RMake agents a static final constant or non-public and provide accessors if needed.(üãÄŸıÿÿÿÿ
+j
+java:S1104"UMake equipment a static final constant or non-public and provide accessors if needed.(—ğ“U
+t
+java:S1104"YMake statusEffects a static final constant or non-public and provide accessors if needed.(Ä¿ƒÿÿÿÿÿ
+j
+java:S1104"TMake diceRoll a static final constant or non-public and provide accessors if needed.(´…²À
+m
+java:S1104"RMake writer a static final constant or non-public and provide accessors if needed.(Íş‚¿øÿÿÿÿ
+m
+java:S1104""RMake random a static final constant or non-public and provide accessors if needed.(«‰òşÿÿÿÿ
+L
+java:S1444"1Make this "public static menuOptions" field final(Ş­¢ÿÿÿÿÿ
+J
+java:S1444"/Make this "public static objectIDs" field final(ß³ÈÖùÿÿÿÿ
+M
+java:S1444"2Make this "public static objectIDsInv" field final(£ÅØııÿÿÿÿ
+G
+java:S1444",Make this "public static fields" field final(ßâáªÿÿÿÿÿ
+L
+java:S1444"1Make this "public static virologists" field final(¼óæşÿÿÿÿ
+G
+java:S1444",Make this "public static agents" field final(üãÄŸıÿÿÿÿ
+D
+java:S1444"/Make this "public static equipment" field final(—ğ“U
+N
+java:S1444"3Make this "public static statusEffects" field final(Ä¿ƒÿÿÿÿÿ
+D
+java:S1444".Make this "public static diceRoll" field final(´…²À
+G
+java:S1444",Make this "public static writer" field final(Íş‚¿øÿÿÿÿ
+G
+java:S1444"",Make this "public static random" field final(«‰òşÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(­ç—ê
+8
+java:S2386"Make this member "protected".(Ş­¢ÿÿÿÿÿ
+8
+java:S2386"Make this member "protected".(ß³ÈÖùÿÿÿÿ
+8
+java:S2386"Make this member "protected".(£ÅØııÿÿÿÿ
+8
+java:S2386"Make this member "protected".(ßâáªÿÿÿÿÿ
+8
+java:S2386"Make this member "protected".(¼óæşÿÿÿÿ
+8
+java:S2386"Make this member "protected".(üãÄŸıÿÿÿÿ
+2
+java:S2386"Make this member "protected".(—ğ“U
+8
+java:S2386"Make this member "protected".(Ä¿ƒÿÿÿÿÿ
+h
+java:S3776)"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Üˆ¤
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(“ÎêŞ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(‰ÉÛ ûÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(¡æ‹ıÿÿÿÿ
+N	java:S1069"9Replace this use of System.out or System.err by a logger.(Ô¸Í¹
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(óİ”Îÿÿÿÿÿ
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(±…ˆ™
+7	java:S131d""Add a default case to this switch.(üÿ¦Ó
+=	java:S131""Add a default case to this switch.(½’—ùÿÿÿÿ
+O	java:S106­"9Replace this use of System.out or System.err by a logger.(×Àöß
+=	java:S131Ì""Add a default case to this switch.(ô¯ ÿÿÿÿÿ
+=	java:S131""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+=	java:S131¥""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+=	java:S131Á""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+7	java:S131Ç""Add a default case to this switch.(¶÷ØT
+T	java:S106ğ"9Replace this use of System.out or System.err by a logger.(ŸÕ·µÿÿÿÿÿ
+O	java:S106ñ"9Replace this use of System.out or System.err by a logger.(±¨ıÚ
+T	java:S106ò"9Replace this use of System.out or System.err by a logger.(ËêêÖøÿÿÿÿ

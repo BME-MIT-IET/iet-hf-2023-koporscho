@@ -16,6 +16,8 @@ import java.io.FileNotFoundException;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
@@ -44,7 +46,7 @@ public class GUI extends JFrame implements Serializable {
     /** Használt betűtípusokat tárolása.*/
     private Font font1 = null;
     private Font font2 = null;
-
+    private final transient Logger logger = Logger.getLogger(GUI.class.getName());
     /** Felsorolás a játék egyes állapotaira.*/
     enum GUIState {
         DEFAULT, MOVE, APPLY_AGENT_STEP1, APPLY_AGENT_STEP2, CRAFT_AGENT, DROP_EQUIPMENT, CHOP, STEAL_EQUIPMENT_STEP1, STEAL_EQUIPMENT_STEP2, END_GAME
@@ -101,7 +103,7 @@ public class GUI extends JFrame implements Serializable {
                 imgMap.put((IViewable) c, img);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
         /**A vizuális kezelőpanelek létrehozása és beállítása*/
         bgrPanel = new Background();
@@ -208,7 +210,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -351,7 +353,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -387,7 +389,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -479,7 +481,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -598,7 +600,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -643,7 +645,8 @@ public class GUI extends JFrame implements Serializable {
             if(!gc.GameRunning()) return;
             int xBase = 10, yBase = 35;
             int xPadding = 5, yPadding = 22;
-
+            final String cancel = "0. Cancel";
+            final String unidentified = "<UNIDENTIFIED>";
             Virologist virologist = GameController.getInstance().GetCurrentVirologist();
 
             ArrayList<Field> fields = virologist.GetField().GetNeighbors();
@@ -652,6 +655,7 @@ public class GUI extends JFrame implements Serializable {
             ArrayList<Agent> agentRecipes = virologist.GetRecipes();
             ArrayList<Equipment> equipmentInventory = virologist.GetEquipment();
             ArrayList<Equipment> targetInventory = new ArrayList<>();
+
             if(targetStep1 > 0 && targetStep1 < characters.size())
                 targetInventory = ((Virologist)virologist.GetField().GetCharacters().get(targetStep1)).GetEquipment();
 
@@ -677,7 +681,7 @@ public class GUI extends JFrame implements Serializable {
                     break;
                 /** MOVE: A felhasználó választhat a lehetséges léphető mezők között.*/
                 case MOVE:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
 
                     for(int i=0; i < fields.size();i++){
                         g.drawString((i+1) + ". field " + GameController.objectIDs.get(fields.get(i)), xBase + xPadding, yBase + yPadding * c++); //allFields.indexOf(fields.get(i))+1
@@ -689,56 +693,56 @@ public class GUI extends JFrame implements Serializable {
                 case APPLY_AGENT_STEP1:
                 case CHOP:
                 case STEAL_EQUIPMENT_STEP1:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
                         g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c);
                         break;
                     }
                     for(int i=0; i < characters.size();i++){
                         String name = ((Virologist)characters.get(i)).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                     /**APPLY_AGENT_STEP2: A felhasználó választhat melyik ágenst használja a kiválasztott célponton.*/
                 case APPLY_AGENT_STEP2:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     for(int i=0; i < agentInventory.size();i++){
                         String name = agentInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 case CRAFT_AGENT:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     for(int i=0; i < agentRecipes.size();i++){
                         String name = agentRecipes.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 case DROP_EQUIPMENT:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
                         g.drawString("Equipment inventory is empty.", xBase + xPadding, yBase + yPadding * c++);
                         break;
                     }
                     for(int i=0; i<equipmentInventory.size(); i++){
                         String name= equipmentInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 /** STEAL_EQUIPMENT_STEP2: A felhasználó választhat a lehetséges eszközök között.*/
                 case STEAL_EQUIPMENT_STEP2:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(targetInventory.size()==0){
                         g.drawString("Target inventory is empty.", xBase + xPadding, yBase + yPadding * c++);
                         break;
                     }
                     for(int i=0; i < targetInventory.size(); i++){
                         String name= targetInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                 /** END_GAME: Játék vége.*/
@@ -769,7 +773,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
             fieldCentersFill("saves/fc_"+gc.getMapName()+".txt");
@@ -859,7 +863,7 @@ public class GUI extends JFrame implements Serializable {
             }
             sc.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
     }
 
@@ -869,7 +873,7 @@ public class GUI extends JFrame implements Serializable {
     public class KL implements KeyListener {
         @Override
         public void keyTyped(KeyEvent e) {
-
+            // This is empty because it has no use in this class
         }
         /**
          * Felhasználói input kezelése a lenyomott gomb alapján.
@@ -1293,6 +1297,7 @@ public class GUI extends JFrame implements Serializable {
          */
         @Override
         public void keyReleased(KeyEvent e) {
+            // This is empty because it has no use in this class
         }
     }
     /**
