@@ -690,8 +690,7 @@ public class GUI extends JFrame implements Serializable {
                 /**APPLY_AGENT_STEP1: A felhasználó választhat a lehetséges célpontok között.
                  * CHOP: A felhasználó választhat a lehetséges célpontok között, azon baltával műveletet végrehajtani.
                  * STEAL_EQUIPMENT_STEP1: A felhasználó választhat a lehetséges célpontok között.*/
-                case APPLY_AGENT_STEP1:
-                case CHOP:
+                case APPLY_AGENT_STEP1, CHOP:
                 case STEAL_EQUIPMENT_STEP1:
                     g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
