@@ -1,7 +1,8 @@
 Rahmi Daniel WIFRTR https://github.com/rahmidaniel
-- A projektet az IntelliJ IDEA segítségével kibővítettem Maven támogatással.
-- Konfiguráltam a projekt pom.xml fájlját úgy, hogy tartalmazza a Cucumber és JUnit dependency-ket.
-- Beállítottam a szükséges Maven plugin-okat, beleértve a Maven Surefire plugin-t a tesztek futtatásához.
-- Hozzáadtam egy GitHub Actions workflow-t azzal, hogy létrehoztam egy YAML fájlt (.github/workflows/maven.yml) a repository-ban.
-- A workflow-t úgy konfiguráltam, hogy fusson minden push és pull request eseményre a main branch-en.
-- Támogatást nyújtottam csapat többi tagjának az IntelliJ beépített Maven funkcióinak használatához, hogy futtathassák és bővíthessék a projektet, például a tesztek futtatásával és a Maven parancsokkal.
+
+A projektet az IntelliJ IDEA segítségével kibővítettem Maven támogatással. Konfiguráltam a projekt pom.xml fájlját úgy.
+Beállítottam a szükséges Maven plugin-okat (Cucumber és JUnit, stb), beleértve a Maven Surefire plugin-t a tesztek futtatásához.
+
+Hozzáadtam egy GitHub Actions workflow-t azzal, hogy létrehoztam egy YAML fájlt (.github/workflows/maven.yml) a repository-ban. A workflow-t úgy konfiguráltam, hogy fusson minden push és pull request eseményre a main branch-en.
+
+Támogatást nyújtottam csapat többi tagjának az IntelliJ beépített Maven funkcióinak használatához, hogy futtathassák és bővíthessék a projektet, például a tesztek futtatásával és a Maven parancsokkal.
