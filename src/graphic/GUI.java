@@ -13,12 +13,14 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
  */
-public class GUI extends JFrame, Serializable {
+public class GUI extends JFrame implements Serializable {
     @Serial
     private static final long serialVersionUID = 12412050123L;
     /** HashMap, ami egy adott mezőhöz tárolja a középpontját.*/
