@@ -18,7 +18,9 @@ import java.util.*;
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
  */
-public class GUI extends JFrame{
+public class GUI extends JFrame, Serializable {
+    @Serial
+    private static final long serialVersionUID = 12412050123L;
     /** HashMap, ami egy adott mezőhöz tárolja a középpontját.*/
     private final HashMap<Field, Point> fieldCentres = new HashMap<>();
 
