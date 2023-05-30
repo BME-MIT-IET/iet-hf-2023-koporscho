@@ -1,0 +1,90 @@
+
+
+java:S13190"fThe type of "objectIDs" should be an interface such as "Map" rather than the implementation "HashMap".(ß³ÈÖùÿÿÿÿ
+„
+java:S13191"iThe type of "objectIDsInv" should be an interface such as "Map" rather than the implementation "HashMap".(£ÅØııÿÿÿÿ
+ˆ
+java:S1319ó"rThe return type of this method should be an interface such as "Deque" rather than the implementation "ArrayDeque".(âÌãX
+
+java:S1319÷"cThe type of "c" should be an interface such as "Deque" rather than the implementation "ArrayDeque".(â³ÃŞıÿÿÿÿ
+‡
+java:S1319û"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ô’—±
+x
+java:S1319ÿ"aThe type of "a" should be an interface such as "List" rather than the implementation "ArrayList".(ó‡ó
+‡
+java:S1319ƒ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(˜úİÒ
+}
+java:S1319‡"aThe type of "e" should be an interface such as "List" rather than the implementation "ArrayList".(³×Ş‹øÿÿÿÿ
+w
+java:S1319‹"`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ã¶„ì
+|
+java:S1319"`The type of "IDs" should be an interface such as "Map" rather than the implementation "HashMap".(ã›¸»üÿÿÿÿ
+g	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã¶„ì
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã›¸»üÿÿÿÿ
+p
+java:S11040"UMake objectIDs a static final constant or non-public and provide accessors if needed.(ß³ÈÖùÿÿÿÿ
+s
+java:S11041"XMake objectIDsInv a static final constant or non-public and provide accessors if needed.(£ÅØııÿÿÿÿ
+k
+java:S11043"UMake bearCount a static final constant or non-public and provide accessors if needed.(¥€À¡
+j
+java:S11044"OMake win a static final constant or non-public and provide accessors if needed.(á°åìÿÿÿÿÿ
+J
+java:S14440"/Make this "public static objectIDs" field final(ß³ÈÖùÿÿÿÿ
+M
+java:S14441"2Make this "public static objectIDsInv" field final(£ÅØııÿÿÿÿ
+E
+java:S14443"/Make this "public static bearCount" field final(¥€À¡
+D
+java:S14444")Make this "public static win" field final(á°åìÿÿÿÿÿ
+8
+java:S23860"Make this member "protected".(ß³ÈÖùÿÿÿÿ
+8
+java:S23861"Make this member "protected".(£ÅØııÿÿÿÿ
+D
+java:S1948!")Make "gameMap" transient or serializable.(¯Ú»Šÿÿÿÿÿ
+D
+java:S1948&")Make "chQueue" transient or serializable.(¢îììşÿÿÿÿ
+>
+java:S1948*"(Make "agents" transient or serializable.(„ğ Ç
+F
+java:S1948."+Make "equipment" transient or serializable.(™¼º×úÿÿÿÿ
+h	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çáØşÿÿÿÿ
+c	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôˆñ 
+h	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÊïÉşÿÿÿÿ
+h	java:S100O"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¾Íúøÿÿÿÿ
+c	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ”›
+c	java:S100e"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”òŸ”
+h	java:S100o"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÓÜ¡şÿÿÿÿ
+c	java:S100y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šó¹ñ
+d	java:S100‚"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÛê
+i	java:S100Œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨áğÒøÿÿÿÿ
+d	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÖİ°
+M
+java:S2696œ"6Make the enclosing method "static" or remove this set.(£Ãø¡
+d	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú’êü
+i	java:S100®"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹‰ìÔøÿÿÿÿ
+Z
+java:S1155´">Use isEmpty() to check whether the collection is empty or not.(á¥ŒÚıÿÿÿÿ
+R
+java:S2696µ"6Make the enclosing method "static" or remove this set.(×ŸÉåşÿÿÿÿ
+c	java:S100Å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—•È.
+i	java:S100Î"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İœÊßıÿÿÿÿ
+i	java:S100Õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò‹Êúÿÿÿÿ
+i	java:S100ë"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÊĞŞúÿÿÿÿ
+d	java:S100ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­é¢¶
+c	java:S100ó"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÌãX
+i	java:S100÷"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â³ÃŞıÿÿÿÿ
+d	java:S100û"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô’—±
+d	java:S100ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó‡ó
+d	java:S100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜úİÒ
+i	java:S100‡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³×Ş‹øÿÿÿÿ
+d	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã¶„ì
+M
+java:S2696Œ"6Make the enclosing method "static" or remove this set.( ÂÒ³
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã›¸»üÿÿÿÿ
+R
+java:S2696"6Make the enclosing method "static" or remove this set.(Îƒëëÿÿÿÿÿ
+c	java:S100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ú«
+=	java:S131›""Add a default case to this switch.(½’—ùÿÿÿÿ
+O	java:S106´"9Replace this use of System.out or System.err by a logger.(×Àöß

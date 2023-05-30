@@ -16,6 +16,8 @@ import java.io.FileNotFoundException;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
@@ -44,7 +46,7 @@ public class GUI extends JFrame implements Serializable {
     /** Használt betűtípusokat tárolása.*/
     private Font font1 = null;
     private Font font2 = null;
-
+    private final transient Logger logger = Logger.getLogger(GUI.class.getName());
     /** Felsorolás a játék egyes állapotaira.*/
     enum GUIState {
         DEFAULT, MOVE, APPLY_AGENT_STEP1, APPLY_AGENT_STEP2, CRAFT_AGENT, DROP_EQUIPMENT, CHOP, STEAL_EQUIPMENT_STEP1, STEAL_EQUIPMENT_STEP2, END_GAME
@@ -101,7 +103,7 @@ public class GUI extends JFrame implements Serializable {
                 imgMap.put((IViewable) c, img);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
         /**A vizuális kezelőpanelek létrehozása és beállítása*/
         bgrPanel = new Background();
@@ -208,7 +210,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -351,7 +353,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -387,7 +389,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -479,7 +481,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -598,7 +600,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -769,7 +771,7 @@ public class GUI extends JFrame implements Serializable {
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
             fieldCentersFill("saves/fc_"+gc.getMapName()+".txt");
@@ -859,7 +861,7 @@ public class GUI extends JFrame implements Serializable {
             }
             sc.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
     }
 
