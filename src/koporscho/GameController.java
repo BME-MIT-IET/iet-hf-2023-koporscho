@@ -4,6 +4,8 @@ import graphic.IViewable;
 import graphic.SaveLoader;
 import graphic.View;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,19 +17,20 @@ import java.util.Scanner;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : GameController.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
 /**
  * A körökért és a bemenetek kezeléséért felelős osztály.
  */
-public class GameController implements IViewable {
+public class GameController implements IViewable, Serializable {
+    @Serial
+    private static final long serialVersionUID = 1905122041950251207L;
     /**
      * Az aktuális játék játékterét tárolja.
      */
     private GameMap gameMap;
-    static private GameController gc = new GameController();
 
     /**
      * A játékban szereplő karaktereket tárolja.
@@ -160,7 +163,7 @@ public class GameController implements IViewable {
     /**
      * Leállítja a játékot, a paraméterként megadott karaktert kihirdetve győztesnek.
      */
-    public void EndGame(Character c) {
+    public void EndGame() {
         gameRunning = false;
         NotifyViews();
     }
@@ -170,13 +173,13 @@ public class GameController implements IViewable {
      */
     public void NextTurn() {
         if (bearCount == chQueue.size()) {
-            EndGame(null);
+            EndGame();
             NotifyViews();
             return;
         }
         if (agents.size() != 0 && chQueue.element().GetRecipeCount() == agents.size()) {
             win = true;
-            EndGame(chQueue.element());
+            EndGame();
             NotifyViews();
             return;
         }
@@ -209,7 +212,6 @@ public class GameController implements IViewable {
      */
     public void Reset() {
         gameRunning = false;
-        gc = new GameController();
         chQueue.clear();
         agents.clear();
         equipment.clear();
@@ -271,44 +273,46 @@ public class GameController implements IViewable {
     }
 
     public void LoadMap(String filename) {
-        Scanner sc = new Scanner(filename);
-        ArrayList<Field> temp = new ArrayList<>();
-        String line = sc.nextLine();
-        String[] proc = line.split(" ");
-        for (int i = 1; i <= (proc.length - 1); i += 2) {
-            Field f = null;
-            switch (proc[i]) {
-                case "city":
-                    f = new City();
-                    break;
-                case "lab":
-                    f = new Lab();
-                    break;
-                case "shelter":
-                    f = new Shelter();
-                    break;
-                case "storage":
-                    f = new Storage();
-                    break;
-            }
-            String id = proc[i + 1];
-            if (proc[i + 1].endsWith(";"))
-                id = proc[i + 1].substring(0, proc[i + 1].length() - 1);
-            objectIDs.put(f, id);
-            objectIDsInv.put(id, f);
-            temp.add(f);
-            gameMap.GetFields().add(f);
-        }
-
-        if (temp.size() > 1) {
-            for (Field f : temp) {
-                System.out.println(objectIDs.get(f) + ": ");
-                String[] neighbors = sc.nextLine().split(" ");
-                ArrayList<Field> neighborsArr = new ArrayList<>();
-                for (String id : neighbors) {
-                    neighborsArr.add((Field) objectIDsInv.get(id));
+        try (Scanner sc = new Scanner(filename))
+        {
+            ArrayList<Field> temp = new ArrayList<>();
+            String line = sc.nextLine();
+            String[] proc = line.split(" ");
+            for (int i = 1; i <= (proc.length - 1); i += 2) {
+                Field f = null;
+                switch (proc[i]) {
+                    case "city":
+                        f = new City();
+                        break;
+                    case "lab":
+                        f = new Lab();
+                        break;
+                    case "shelter":
+                        f = new Shelter();
+                        break;
+                    case "storage":
+                        f = new Storage();
+                        break;
                 }
-                f.SetNeighbors(neighborsArr);
+                String id = proc[i + 1];
+                if (proc[i + 1].endsWith(";"))
+                    id = proc[i + 1].substring(0, proc[i + 1].length() - 1);
+                objectIDs.put(f, id);
+                objectIDsInv.put(id, f);
+                temp.add(f);
+                gameMap.GetFields().add(f);
+            }
+
+            if (temp.size() > 1) {
+                for (Field f : temp) {
+                    System.out.println(objectIDs.get(f) + ": ");
+                    String[] neighbors = sc.nextLine().split(" ");
+                    ArrayList<Field> neighborsArr = new ArrayList<>();
+                    for (String id : neighbors) {
+                        neighborsArr.add((Field) objectIDsInv.get(id));
+                    }
+                    f.SetNeighbors(neighborsArr);
+                }
             }
         }
     }

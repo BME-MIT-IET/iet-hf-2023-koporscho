@@ -4,7 +4,7 @@ public class Main {
 
     /** Fő szál indítása*/
     /*
-    public static void main(String[] args){
+        public static void main(String[] args){
 
         Prototype.menuOptions.add(new Test("Virologist steps on City", "1.txt"));
         Prototype.menuOptions.add(new Test("Virologist steps on Lab", "2.txt"));

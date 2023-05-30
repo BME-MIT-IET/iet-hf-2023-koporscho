@@ -10,7 +10,7 @@ import java.util.ArrayList;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : Virologist.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
@@ -348,6 +348,7 @@ public class Virologist extends Character implements IViewable {
 	 *
 	 * @return karakter által ismert ágensek száma
 	 */
+	@Override
 	public int GetRecipeCount() {
 		return agentRecipes.size();
 	}

@@ -28,7 +28,9 @@ public class Prototype {
     public static BufferedWriter writer;
 
     public static boolean random = false;
-
+      private Prototype() {
+        throw new IllegalStateException("Utility class");
+        }
     /**
      * A Prototípus futását megvalósító függvény, itt választhatóak ki a különböző tesztesetek futtatásra.
      */
@@ -461,36 +463,36 @@ public class Prototype {
      */
     private  static void evaluateOutput() throws IOException{
         File correctOutput=new File("outputs/" + menuOptions.get(selectedOption-1).fileName);
-        FileReader fr1=new FileReader(correctOutput);
-        BufferedReader br1=new BufferedReader(fr1);
-        String correctLine;
-
         File output=new File("outputs/"+ fileName);
-        FileReader fr2=new FileReader(output);
-        BufferedReader br2=new BufferedReader(fr2);
-        String outputLine;
+        try(
+            FileReader fr1=new FileReader(correctOutput);
+            FileReader fr2=new FileReader(output);
+            BufferedReader br1=new BufferedReader(fr1); 
+            BufferedReader br2=new BufferedReader(fr2); 
+        ) {
+            String correctLine;
+            String outputLine;
 
-        boolean incorrect=false;
-        int i=1;
-        while(true) {
-            correctLine=br1.readLine();
-            outputLine=br2.readLine();
-            
-            if(correctLine==null || outputLine==null) break;
-            correctLine=correctLine.replaceAll("\\s+","");
-            outputLine=outputLine.replaceAll("\\s+","");
-            if(!correctLine.equals(outputLine)) {
-                incorrect = true;
-                break;
+            boolean incorrect=false;
+            int i=1;
+            while(true) {
+                correctLine=br1.readLine();
+                outputLine=br2.readLine();
+                
+                if(correctLine==null || outputLine==null) break;
+                correctLine=correctLine.replaceAll("\\s+","");
+                outputLine=outputLine.replaceAll("\\s+","");
+                if(!correctLine.equals(outputLine)) {
+                    incorrect = true;
+                    break;
+                }
+                i++;
+
             }
-            i++;
-
+            if(incorrect) System.out.print("FAILURE ---> Test: (failed at line: " + i + ") ");
+            else System.out.print("SUCCESS ---> Test: ");
+            System.out.println(menuOptions.get(selectedOption-1).fileName);
         }
-        if(incorrect) System.out.print("FAILURE ---> Test: (failed at line: " + i + ") ");
-        else System.out.print("SUCCESS ---> Test: ");
-        System.out.println(menuOptions.get(selectedOption-1).fileName);
-        br1.close();
-        br2.close();
     }
 
     /**

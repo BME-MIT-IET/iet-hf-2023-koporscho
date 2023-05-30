@@ -1,6 +1,7 @@
 package koporscho;
 import proto.Prototype;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
 //
@@ -10,7 +11,7 @@ import java.util.Random;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : StatusEffect.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
@@ -28,6 +29,7 @@ public class StatusEffect {
 	private int duration;
 	private boolean bear;
 	private boolean dead;
+	private static SecureRandom random = new SecureRandom();
 
 
 	/** Implicit konstruktor a StatusEffect számára*/
@@ -88,10 +90,8 @@ public class StatusEffect {
 		ArrayList<Field> neighbours = target.GetField().GetNeighbors();
 		// Random index from neighbours
 		int i = 0;
-
 		if(neighbours != null &&neighbours.size()!=0) {
 			if (neighbours.size() > 1) {
-				Random random = new Random();
 				i = random.nextInt(neighbours.size() - 1);
 			}
 

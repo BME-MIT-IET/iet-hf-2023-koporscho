@@ -11,7 +11,7 @@ import java.util.*;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : GameMap.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
@@ -19,7 +19,7 @@ import java.util.*;
 /** A játékteret reprezentáló osztály */
 public class GameMap {
 	/** A pályán szereplő mezőket tárolja*/
-	private final ArrayList<Field> fields;
+	private static ArrayList<Field> fields;
 
 	/**
 	 * Létrehozza a pályát a paraméterként mezőkből.
@@ -41,7 +41,7 @@ public class GameMap {
 			File myObj = new File("map.txt");
 			Scanner myReader = new Scanner(myObj);
 			boolean done = false;
-			ArrayList<Field> fields = new ArrayList<>();
+			fields = new ArrayList<>();
 			ArrayList<Lab> labs = new ArrayList<>();
 			ArrayList<Storage> storages = new ArrayList<>();
 			ArrayList<Shelter> shelters = new ArrayList<>();

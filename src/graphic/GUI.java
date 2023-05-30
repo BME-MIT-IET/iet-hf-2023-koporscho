@@ -13,17 +13,21 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
  */
-public class GUI extends JFrame{
+public class GUI extends JFrame implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 12412050123L;
     /** HashMap, ami egy adott mezőhöz tárolja a középpontját.*/
     private final HashMap<Field, Point> fieldCentres = new HashMap<>();
 
     /** Egy Game Controllert tárol.*/
-    private final GameController gc = GameController.getInstance();
+    private static final GameController gc = GameController.getInstance();
 
     /** Egy Game Controller nézetet tárol.*/
     private final GameControllerView gcView = new GameControllerView();
@@ -125,7 +129,7 @@ public class GUI extends JFrame{
         UIPanel.add(mapPanel);
         contentPane.add(UIPanel);
         setContentPane(contentPane);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setResizable(false);
         setTitle("Koporscho TM: Blind Virologists");
@@ -165,7 +169,7 @@ public class GUI extends JFrame{
         /** Az adott osztály neve.*/
         protected String name;
         /** Az adott osztály képe.*/
-        protected Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
+        protected transient Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
         /** Inicializáló függvény.*/
         public void init() {
             setPreferredSize(imgDim.get(name));
@@ -177,6 +181,7 @@ public class GUI extends JFrame{
             img.getGraphics().clearRect(0, 0, img.getWidth(null), img.getHeight(null));
         }
         /** Az interfacet kirajzoló függvény.*/
+        @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
         }
@@ -251,6 +256,7 @@ public class GUI extends JFrame{
         BufferedImage bgr, status, portrait;
 
         /** Az attribútum kezelőfelületét frissítő függvény.*/
+        @Override
         public void update() {
             super.update();
             Graphics gr = img.getGraphics();
@@ -272,6 +278,12 @@ public class GUI extends JFrame{
             gr.drawString(aminoStr, 5,230+16);
             gr.drawString(nucleoStr, 5,246+16);
             gr.drawString(apStr, 5,262+16);
+            drawn(gr, statuses);
+            repaint();
+        }
+
+        public void drawn(Graphics gr, ArrayList<StatusEffect> statuses)
+        {
             int i = 0;
             int xOffs = 8;
             int yOffs = 8+128+32;
@@ -326,7 +338,6 @@ public class GUI extends JFrame{
                     drawn[7] = true;
                 }
             }
-            repaint();
         }
 
         /** Kontruktor, amely a tulajdonság kezelőfelületet létrehozza. */
@@ -563,6 +574,8 @@ public class GUI extends JFrame{
                     gr.drawImage(rec,0,0,null);break;
                 case 2:
                     gr.drawImage(field,0,0,null);break;
+                default:
+                    gr.drawImage(inv,0,0,null);break;
             }
             g.drawImage(img, 0, 0, null);
             this.repaint();
@@ -678,7 +691,7 @@ public class GUI extends JFrame{
                 case STEAL_EQUIPMENT_STEP1:
                     g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
-                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c++);
+                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c);
                         break;
                     }
                     for(int i=0; i < characters.size();i++){
@@ -769,8 +782,11 @@ public class GUI extends JFrame{
             gr.setColor(Color.WHITE);
             gr.setFont(font2);
             HashMap<Point, Integer> pointOffSets = new HashMap<>();
-            for(Virologist v: virLoc.keySet()) {
-                Point p = virLoc.get(v);
+            Point p = null;
+            Virologist v = null;
+            for(HashMap.Entry<Virologist, Point> entry: virLoc.entrySet()) {
+                p = entry.getValue();
+                v = entry.getKey();
                 Integer offset = pointOffSets.get(p);
                 int offs = offset == null ? 0 : offset;
                 if(bears.contains(v)) {
@@ -782,8 +798,8 @@ public class GUI extends JFrame{
                 pointOffSets.put(p, offs);
             }
             if(state == GUIState.MOVE) {
-                Virologist v = (Virologist) GameController.objectIDsInv.get(currID);
-                ArrayList<Field> neighbors = v.GetField().GetNeighbors();
+                Virologist vi = (Virologist) GameController.objectIDsInv.get(currID);
+                ArrayList<Field> neighbors = vi.GetField().GetNeighbors();
                 for(int i = 0; i < neighbors.size();i++) {
                     String str = String.format("%d",i+1);
                     Point pt = fieldCentres.get(neighbors.get(i));
@@ -815,7 +831,6 @@ public class GUI extends JFrame{
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            Graphics gr = img.getGraphics();
             g.drawImage(img, 0, 0, this);
             this.repaint();
         }

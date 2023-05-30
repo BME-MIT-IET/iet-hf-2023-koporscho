@@ -1,4 +1,5 @@
 package koporscho;
+import java.security.SecureRandom;
 import java.util.*;
 //
 //
@@ -7,7 +8,7 @@ import java.util.*;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : Character.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
@@ -65,32 +66,38 @@ public abstract class Character {
 			float immunity = 1-infectionChance;
 			float diceRoll;
 
-			diceRoll = (float) Math.random();
+			SecureRandom random = new SecureRandom();
+			diceRoll = random.nextFloat();
 
 			if (diceRoll > immunity) {
-				StatusEffect e = new StatusEffect(agent.GetEffect());
-				activeEffects.add(e);
-				// Bear Agent
-				if(e.GetBear()){
-					if(!((Virologist)this).GetName().contains("Bear")) {
-						StringBuilder bs = new StringBuilder();
-						bs.insert(0, "Bear-");
-						bs.insert(5, ((Virologist) this).GetName().charAt(((Virologist) this).GetName().length()-1));
-						((Virologist) this).SetName(bs.toString());
-					}
-					((Virologist)this).SetApCurrent(0);
-					((Virologist)this).GetRecipes().clear();
-					((Virologist)this).GetAgentInventory().clear();
-					((Virologist)this).SetMaterials(new Materials(0,0));
-					((Virologist)this).SetMaxMaterials(new Materials(0,0));
-					for (Equipment eq : ((Virologist) this).GetEquipment()) {
-						activeEffects.remove(eq.GetEffect());
-					}
-					((Virologist) this).GetEquipment().clear();
-
-					GameController.getInstance().bearCount++;
-				}
+				DoTheBear(agent);
 			}
+		}
+	}
+
+	public void DoTheBear(Agent agent)
+	{
+		StatusEffect e = new StatusEffect(agent.GetEffect());
+		activeEffects.add(e);
+		// Bear Agent
+		if(e.GetBear()){
+			if(!((Virologist)this).GetName().contains("Bear")) {
+				StringBuilder bs = new StringBuilder();
+				bs.insert(0, "Bear-");
+				bs.insert(5, ((Virologist) this).GetName().charAt(((Virologist) this).GetName().length()-1));
+				((Virologist) this).SetName(bs.toString());
+			}
+			((Virologist)this).SetApCurrent(0);
+			((Virologist)this).GetRecipes().clear();
+			((Virologist)this).GetAgentInventory().clear();
+			((Virologist)this).SetMaterials(new Materials(0,0));
+			((Virologist)this).SetMaxMaterials(new Materials(0,0));
+			for (Equipment eq : ((Virologist) this).GetEquipment()) {
+				activeEffects.remove(eq.GetEffect());
+			}
+			((Virologist) this).GetEquipment().clear();
+
+			GameController.getInstance().bearCount++;
 		}
 	}
 
