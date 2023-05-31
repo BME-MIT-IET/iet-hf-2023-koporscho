@@ -93,7 +93,7 @@
         <testSourceDirectory>src/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>src</directory>
+                <directory>src/res</directory>
             </resource>
         </resources>
 		<plugins>
