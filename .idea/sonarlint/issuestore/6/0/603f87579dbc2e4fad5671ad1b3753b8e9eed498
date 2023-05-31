@@ -1,0 +1,72 @@
+
+
+java:S1319"fThe type of "objectIDs" should be an interface such as "Map" rather than the implementation "HashMap".(ß³ÈÖùÿÿÿÿ
+„
+java:S1319"iThe type of "objectIDsInv" should be an interface such as "Map" rather than the implementation "HashMap".(£ÅØııÿÿÿÿ
+
+java:S1319"fThe type of "fields" should be an interface such as "List" rather than the implementation "ArrayList".(ßâáªÿÿÿÿÿ
+ƒ
+java:S1319"mThe type of "virologists" should be an interface such as "Deque" rather than the implementation "ArrayDeque".(ø›ÓÜ
+
+java:S1319"fThe type of "agents" should be an interface such as "List" rather than the implementation "ArrayList".(üãÄŸıÿÿÿÿ
+~
+java:S1319""iThe type of "equipment" should be an interface such as "List" rather than the implementation "ArrayList".(—ğ“U
+ˆ
+java:S1319%"mThe type of "statusEffects" should be an interface such as "List" rather than the implementation "ArrayList".(Ä¿ƒÿÿÿÿÿ
+g
+java:S1301Æ"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+g
+java:S1301Û"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+g
+java:S1301÷"KReplace this "switch" statement by "if" statements to increase readability.(¤ƒìƒüÿÿÿÿ
+p
+java:S1104"UMake objectIDs a static final constant or non-public and provide accessors if needed.(ß³ÈÖùÿÿÿÿ
+s
+java:S1104"XMake objectIDsInv a static final constant or non-public and provide accessors if needed.(£ÅØııÿÿÿÿ
+m
+java:S1104"RMake fields a static final constant or non-public and provide accessors if needed.(ßâáªÿÿÿÿÿ
+m
+java:S1104"WMake virologists a static final constant or non-public and provide accessors if needed.(ø›ÓÜ
+m
+java:S1104"RMake agents a static final constant or non-public and provide accessors if needed.(üãÄŸıÿÿÿÿ
+j
+java:S1104""UMake equipment a static final constant or non-public and provide accessors if needed.(—ğ“U
+t
+java:S1104%"YMake statusEffects a static final constant or non-public and provide accessors if needed.(Ä¿ƒÿÿÿÿÿ
+J
+java:S1444"/Make this "public static objectIDs" field final(ß³ÈÖùÿÿÿÿ
+M
+java:S1444"2Make this "public static objectIDsInv" field final(£ÅØııÿÿÿÿ
+G
+java:S1444",Make this "public static fields" field final(ßâáªÿÿÿÿÿ
+G
+java:S1444"1Make this "public static virologists" field final(ø›ÓÜ
+G
+java:S1444",Make this "public static agents" field final(üãÄŸıÿÿÿÿ
+D
+java:S1444""/Make this "public static equipment" field final(—ğ“U
+N
+java:S1444%"3Make this "public static statusEffects" field final(Ä¿ƒÿÿÿÿÿ
+8
+java:S2386"Make this member "protected".(ß³ÈÖùÿÿÿÿ
+8
+java:S2386"Make this member "protected".(£ÅØııÿÿÿÿ
+8
+java:S2386"Make this member "protected".(ßâáªÿÿÿÿÿ
+3
+java:S2386"Make this member "protected".(ø›ÓÜ
+8
+java:S2386"Make this member "protected".(üãÄŸıÿÿÿÿ
+2
+java:S2386""Make this member "protected".(—ğ“U
+8
+java:S2386%"Make this member "protected".(Ä¿ƒÿÿÿÿÿ
+b	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òéİ(
+‚
+java:S11305"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(†ş‚´
+<	java:S131g""Add a default case to this switch.(½’—ùÿÿÿÿ
+=	java:S131•""Add a default case to this switch.(ô¯ ÿÿÿÿÿ
+=	java:S131Æ""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+=	java:S131Û""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+=	java:S131÷""Add a default case to this switch.(¤ƒìƒüÿÿÿÿ
+d	java:S100‘"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ÷ß

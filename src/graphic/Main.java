@@ -1,12 +1,16 @@
 package graphic;
 
 import koporscho.GameController;
+import koporscho.GameMap;
 
 import javax.swing.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /** A fő szál megvalósítására szolgáló osztály.*/
 public class Main {
     /** A main függvény megvalósítása*/
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         try {
             GameController gc = GameController.getInstance();
@@ -28,7 +32,7 @@ public class Main {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
     }
 }

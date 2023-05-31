@@ -13,17 +13,23 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Az grafikus kezelőfelület megvalósítására szolgáló osztály.
  */
-public class GUI extends JFrame{
+public class GUI extends JFrame implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 12412050123L;
     /** HashMap, ami egy adott mezőhöz tárolja a középpontját.*/
     private final HashMap<Field, Point> fieldCentres = new HashMap<>();
 
     /** Egy Game Controllert tárol.*/
-    private final GameController gc = GameController.getInstance();
+    private static final GameController gc = GameController.getInstance();
 
     /** Egy Game Controller nézetet tárol.*/
     private final GameControllerView gcView = new GameControllerView();
@@ -40,7 +46,7 @@ public class GUI extends JFrame{
     /** Használt betűtípusokat tárolása.*/
     private Font font1 = null;
     private Font font2 = null;
-
+    private final transient Logger logger = Logger.getLogger(GUI.class.getName());
     /** Felsorolás a játék egyes állapotaira.*/
     enum GUIState {
         DEFAULT, MOVE, APPLY_AGENT_STEP1, APPLY_AGENT_STEP2, CRAFT_AGENT, DROP_EQUIPMENT, CHOP, STEAL_EQUIPMENT_STEP1, STEAL_EQUIPMENT_STEP2, END_GAME
@@ -97,7 +103,7 @@ public class GUI extends JFrame{
                 imgMap.put((IViewable) c, img);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
         /**A vizuális kezelőpanelek létrehozása és beállítása*/
         bgrPanel = new Background();
@@ -133,6 +139,7 @@ public class GUI extends JFrame{
 
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         pack();
         setResizable(true);
         setTitle("Koporscho TM: Blind Virologists");
@@ -172,7 +179,7 @@ public class GUI extends JFrame{
         /** Az adott osztály neve.*/
         protected String name;
         /** Az adott osztály képe.*/
-        protected Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
+        protected transient Image img = new BufferedImage(wWIDTH, wHEIGHT, BufferedImage.TYPE_INT_ARGB);
         /** Inicializáló függvény.*/
         public void init() {
             setPreferredSize(imgDim.get(name));
@@ -184,6 +191,7 @@ public class GUI extends JFrame{
             img.getGraphics().clearRect(0, 0, img.getWidth(null), img.getHeight(null));
         }
         /** Az interfacet kirajzoló függvény.*/
+        @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
         }
@@ -210,7 +218,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -258,6 +266,7 @@ public class GUI extends JFrame{
         BufferedImage bgr, status, portrait;
 
         /** Az attribútum kezelőfelületét frissítő függvény.*/
+        @Override
         public void update() {
             super.update();
             Graphics gr = img.getGraphics();
@@ -279,6 +288,12 @@ public class GUI extends JFrame{
             gr.drawString(aminoStr, 5,230+16);
             gr.drawString(nucleoStr, 5,246+16);
             gr.drawString(apStr, 5,262+16);
+            drawn(gr, statuses);
+            repaint();
+        }
+
+        public void drawn(Graphics gr, ArrayList<StatusEffect> statuses)
+        {
             int i = 0;
             int xOffs = 8;
             int yOffs = 8+128+32;
@@ -333,7 +348,6 @@ public class GUI extends JFrame{
                     drawn[7] = true;
                 }
             }
-            repaint();
         }
 
         /** Kontruktor, amely a tulajdonság kezelőfelületet létrehozza. */
@@ -347,7 +361,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -383,7 +397,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -475,7 +489,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -570,6 +584,8 @@ public class GUI extends JFrame{
                     gr.drawImage(rec,0,0,null);break;
                 case 2:
                     gr.drawImage(field,0,0,null);break;
+                default:
+                    gr.drawImage(inv,0,0,null);break;
             }
             g.drawImage(img, 0, 0, null);
             this.repaint();
@@ -592,7 +608,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
         }
@@ -637,7 +653,8 @@ public class GUI extends JFrame{
             if(!gc.GameRunning()) return;
             int xBase = 10, yBase = 35;
             int xPadding = 5, yPadding = 22;
-
+            final String cancel = "0. Cancel";
+            final String unidentified = "<UNIDENTIFIED>";
             Virologist virologist = GameController.getInstance().GetCurrentVirologist();
 
             ArrayList<Field> fields = virologist.GetField().GetNeighbors();
@@ -646,6 +663,7 @@ public class GUI extends JFrame{
             ArrayList<Agent> agentRecipes = virologist.GetRecipes();
             ArrayList<Equipment> equipmentInventory = virologist.GetEquipment();
             ArrayList<Equipment> targetInventory = new ArrayList<>();
+
             if(targetStep1 > 0 && targetStep1 < characters.size())
                 targetInventory = ((Virologist)virologist.GetField().GetCharacters().get(targetStep1)).GetEquipment();
 
@@ -671,7 +689,7 @@ public class GUI extends JFrame{
                     break;
                 /** MOVE: A felhasználó választhat a lehetséges léphető mezők között.*/
                 case MOVE:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
 
                     for(int i=0; i < fields.size();i++){
                         g.drawString((i+1) + ". field " + GameController.objectIDs.get(fields.get(i)), xBase + xPadding, yBase + yPadding * c++); //allFields.indexOf(fields.get(i))+1
@@ -683,56 +701,56 @@ public class GUI extends JFrame{
                 case APPLY_AGENT_STEP1:
                 case CHOP:
                 case STEAL_EQUIPMENT_STEP1:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
-                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c++);
+                        g.drawString("No characters found.", xBase + xPadding, yBase + yPadding * c);
                         break;
                     }
                     for(int i=0; i < characters.size();i++){
                         String name = ((Virologist)characters.get(i)).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                     /**APPLY_AGENT_STEP2: A felhasználó választhat melyik ágenst használja a kiválasztott célponton.*/
                 case APPLY_AGENT_STEP2:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     for(int i=0; i < agentInventory.size();i++){
                         String name = agentInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 case CRAFT_AGENT:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     for(int i=0; i < agentRecipes.size();i++){
                         String name = agentRecipes.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 case DROP_EQUIPMENT:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(characters.size()==0){
                         g.drawString("Equipment inventory is empty.", xBase + xPadding, yBase + yPadding * c++);
                         break;
                     }
                     for(int i=0; i<equipmentInventory.size(); i++){
                         String name= equipmentInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                     break;
                 /** STEAL_EQUIPMENT_STEP2: A felhasználó választhat a lehetséges eszközök között.*/
                 case STEAL_EQUIPMENT_STEP2:
-                    g.drawString("0. Cancel", xBase + xPadding, yBase + yPadding * c++);
+                    g.drawString(cancel, xBase + xPadding, yBase + yPadding * c++);
                     if(targetInventory.size()==0){
                         g.drawString("Target inventory is empty.", xBase + xPadding, yBase + yPadding * c++);
                         break;
                     }
                     for(int i=0; i < targetInventory.size(); i++){
                         String name= targetInventory.get(i).GetName();
-                        name = name.isEmpty() ? "<UNIDENTIFIED>" : name;
+                        name = name.isEmpty() ? unidentified : name;
                         g.drawString((i+1) + ". " + name, xBase + xPadding, yBase + yPadding * c++);
                     }
                 /** END_GAME: Játék vége.*/
@@ -763,7 +781,7 @@ public class GUI extends JFrame{
                 imgDim.put(name,new Dimension(img.getWidth(null),img.getHeight(null)));
             }
             catch (Exception e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, e.getMessage());
             }
             init();
             fieldCentersFill("saves/fc_"+gc.getMapName()+".txt");
@@ -776,8 +794,11 @@ public class GUI extends JFrame{
             gr.setColor(Color.WHITE);
             gr.setFont(font2);
             HashMap<Point, Integer> pointOffSets = new HashMap<>();
-            for(Virologist v: virLoc.keySet()) {
-                Point p = virLoc.get(v);
+            Point p = null;
+            Virologist v = null;
+            for(HashMap.Entry<Virologist, Point> entry: virLoc.entrySet()) {
+                p = entry.getValue();
+                v = entry.getKey();
                 Integer offset = pointOffSets.get(p);
                 int offs = offset == null ? 0 : offset;
                 if(bears.contains(v)) {
@@ -789,8 +810,8 @@ public class GUI extends JFrame{
                 pointOffSets.put(p, offs);
             }
             if(state == GUIState.MOVE) {
-                Virologist v = (Virologist) GameController.objectIDsInv.get(currID);
-                ArrayList<Field> neighbors = v.GetField().GetNeighbors();
+                Virologist vi = (Virologist) GameController.objectIDsInv.get(currID);
+                ArrayList<Field> neighbors = vi.GetField().GetNeighbors();
                 for(int i = 0; i < neighbors.size();i++) {
                     String str = String.format("%d",i+1);
                     Point pt = fieldCentres.get(neighbors.get(i));
@@ -822,7 +843,6 @@ public class GUI extends JFrame{
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            Graphics gr = img.getGraphics();
             g.drawImage(img, 0, 0, this);
             this.repaint();
         }
@@ -851,7 +871,7 @@ public class GUI extends JFrame{
             }
             sc.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, e.getMessage());
         }
     }
 
@@ -861,7 +881,7 @@ public class GUI extends JFrame{
     public class KL implements KeyListener {
         @Override
         public void keyTyped(KeyEvent e) {
-
+            // This is empty because it has no use in this class
         }
         /**
          * Felhasználói input kezelése a lenyomott gomb alapján.
@@ -1285,6 +1305,7 @@ public class GUI extends JFrame{
          */
         @Override
         public void keyReleased(KeyEvent e) {
+            // This is empty because it has no use in this class
         }
     }
     /**

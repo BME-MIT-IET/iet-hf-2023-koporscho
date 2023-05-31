@@ -9,7 +9,7 @@ import proto.Prototype;
 //  @ Project : Koporscho csapat Projlab 
 //  @ File Name : Lab.java
 //  @ Date : 2022. 03. 25.
-//  @ Authors : Szab� Egon, Bir� Ferenc, T�th B�lint, Ferge M�t�, Rahmi D�niel
+//  @ Authors : Szaba Egon, Bira Ferenc, Tath Balint, Ferge Mata, Rahmi Daniel
 //
 //
 
@@ -114,6 +114,7 @@ public class Lab extends Field {
 	 * A Lab osztály logger fügvénye, mely az adott labor tulajdonságait írja ki a standard kimentre és fájlba.
 	 * @throws java.io.IOException
 	 */
+	@Override
 	public void log() throws java.io.IOException{
 		super.log();
 
