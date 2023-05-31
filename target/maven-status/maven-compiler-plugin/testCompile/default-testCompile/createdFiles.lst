@@ -1,7 +1,0 @@
-test\java\RunCucumberTest.class
-test\java\MovingStepDefinitions.class
-test\java\StealingStepDefinitions.class
-test\java\AgentApplyingStepDefinitions.class
-test\java\BearDestroyingStorageStepDefinitions.class
-test\java\AgentCraftingStepDefinitions.class
-test\java\ChopStepDefinitions.class
